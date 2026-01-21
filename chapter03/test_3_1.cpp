@@ -6,7 +6,6 @@ using namespace std;
 
 /* 3.1 排序 */  
 
-
 //华中科技大学机试题T106 排序
 void HSU_106(){
     int n;
