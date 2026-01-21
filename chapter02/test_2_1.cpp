@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/* 2.1 枚举 */   // 进度：6/6
+/* 2.1 枚举 */   
 
 // 清华大学机试题T144 abc
 void TsingHua_144(){
