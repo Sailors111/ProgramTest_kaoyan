@@ -24,31 +24,6 @@ void TsingHua_201(){
     }
 }
 
-// 北京大学机试题T130 Repeater //未完成！
-void PeKing_130(){
-    // 未完成！
-    int N, scale;
-    scanf("%d", &N);
-    char** ch = new char*[N];
-    for(int i = 0; i < N; i++){
-        ch[i] = new char[N];
-    }
-    int count = 0;
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++){
-            scanf("%c", &ch[i][j]);
-            count++;
-        }
-    }
-    printf("%d\n", count);
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++){
-            printf("%c", ch[i][j]);
-        }
-    }
-}
-
-
 // 浙江大学机试题T131 Hello World for U
 void ZJU_131(){
     char str[80];
