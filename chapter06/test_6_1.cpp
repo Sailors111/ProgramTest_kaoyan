@@ -73,7 +73,6 @@ string TenToTwo(string str){  // 十进制数转二进制数
             st.push(ch);
             x = div_2(x);
         }
-        
         while (!st.empty()) {
             res += st.top();
             st.pop();
