@@ -4,10 +4,9 @@
 #include "test_5_1.hpp"
 using namespace std;
 
+/* 5.1 进制转换 */  
 
-/* 6.1 进制转换 */    // 进度：8/8
-
-// 北京邮电大学机试题T100 二进制数 √
+// 北京邮电大学机试题T100 二进制数 
 void BUP_100(){
     unsigned int num;
     while(cin >> num){
@@ -47,7 +46,7 @@ void TsingHua_100(){
 }
 
 
-// 清华大学机试题T125 10进制 VS 2进制 √
+// 清华大学机试题T125 10进制 VS 2进制 
 string reverse(string str) { // 字符串逆转
     string res = "";
     stack<char> st;
@@ -77,7 +76,7 @@ void TsingHua_125(){
 }
 
 
-// 清华大学机试题T129 进制转换2 √
+// 清华大学机试题T129 进制转换2 
 void TsingHua_129(){
     int M, N;
     while(cin >> M >> N){
@@ -89,7 +88,7 @@ void TsingHua_129(){
 }
 
 
-// 华中科技大学机试题T126 八进制 √
+// 华中科技大学机试题T126 八进制 
 void HUS_126(){
     int N;
     while(cin >> N){
@@ -109,7 +108,7 @@ void HUS_126(){
 }
 
 
-// 浙江大学机试题T119 又一版A+B √
+// 浙江大学机试题T119 又一版A+B 
 void ZJU_119(){
     unsigned int m;
     string A, B;
@@ -125,7 +124,7 @@ void ZJU_119(){
 }
 
 
-// 北京大学机试题T151 进制转换2 √
+// 北京大学机试题T151 进制转换2 
 string SixteenToTen(string str){  // 十六进制转十进制
     unsigned long long num = 0;
     int index = 0;
@@ -148,7 +147,7 @@ void PeKing_151(){
 }
 
 
-// 北京大学机试题T128 数制转换 √
+// 北京大学机试题T128 数制转换 
 char _IntToChar(int x){     // 数字转字符
     char ch;
     if(x < 10){
