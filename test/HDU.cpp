@@ -2,9 +2,7 @@
 #include <vector>
 using namespace std;
 
-
-/* 杭州电子科技大学复试上机题 */    // 进度：3/3
-
+/* 杭州电子科技大学复试上机题 */    
 
 // 杭州电子科技大学机试题T1 上楼梯
 void HDU_1(){
@@ -29,7 +27,6 @@ void HDU_1(){
         cout << dp[N] << endl;
     }
 }
-
 
 // 杭州电子科技大学机试题T2 字符菱形
 void HDU_2(){ 
@@ -58,7 +55,6 @@ void HDU_2(){
         }
     }
 }
-
 
 // 杭州电子科技大学机试题T3 最大公约数和最小公倍数
 long long gcd(long long a, long long b){
