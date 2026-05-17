@@ -4,8 +4,7 @@
 #include <queue>
 using namespace std;
 
-/* 兰州大学复试上机题 */    // 进度：4/4
-
+/* 兰州大学复试上机题 */    
 
 // 兰州大学机试题T1 哈夫曼树
 struct HTNode{
@@ -73,7 +72,6 @@ void LZU_1(){
     }
 }
 
-
 // 兰州大学机试题T2 句子正序
 vector<string> split(const string& str){
     vector<string> res;
@@ -112,7 +110,6 @@ void LZU_2(){
     }
 }
 
-
 // 兰州大学机试题T3 求三角形的面积
 
 // 海伦公式：p = (a + b + c) / 2, S = sqrt(p * (p - a) * (p - b) * (p - c))，a、b、c为边长
@@ -129,7 +126,6 @@ void LZU_3(){
         printf("%0.2lf\n", area);
     }
 }
-
 
 // 兰州大学机试题T4 最大序列和
 void LZU_4(){ 
@@ -149,5 +145,3 @@ void LZU_4(){
         cout << res << endl;
     }
 }
-
-
