@@ -4,10 +4,9 @@
 #include <unordered_set>
 using namespace std;
 
+/* 8.1 宽度优先搜索 */
 
-/* 9.1 宽度优先搜索 */   // 进度：1/1
-
-// 清华大学机试题T111 玛雅人的密码 √
+// 清华大学机试题T111 玛雅人的密码 
 string swap(string str, int i, int j) { // 交换字符串中的两个字符str[i]与str[j]
     string res = str;
     char temp = res[i];
@@ -58,5 +57,3 @@ void TsingHua_111(){
         cout << res << endl;
     }
 }
-
-
