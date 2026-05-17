@@ -4,8 +4,7 @@
 #include <algorithm>
 using namespace std;
 
-
-/* 6.4 分解质因数 */
+/* 5.4 分解质因数 */
 
 /*
     埃氏质数筛法
