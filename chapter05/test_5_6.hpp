@@ -2,8 +2,7 @@
 #include <vector>
 using namespace std;
 
-
-/* 6.6 矩阵与矩阵快速幂 */
+/* 5.6 矩阵与矩阵快速幂 */
 
 // 矩阵的定义
 struct Matrix {
