@@ -3,9 +3,7 @@
 #include <vector>
 using namespace std;
 
-
-/* 4.2 字符串处理 */  
-
+/* 3.1 字符串处理 */  
 
 // 字符串替换
 void replaceAll(string& str, const string& S, const string& T){ // 将str中所有的S替换为T
