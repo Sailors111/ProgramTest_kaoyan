@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+/* 7.2 分治 */ 
 
 // Fibonacci数列
 long long Fibonacci(long long num){
@@ -20,6 +21,3 @@ int countNodes(int index, int total_node_num){   // index为节点编号，total
         return 1 + countNodes(2 * index, total_node_num) + countNodes(2 * index + 1, total_node_num);
     }
 }
-
-
-
