@@ -2,11 +2,9 @@
 #include "test_10_1.hpp"
 using namespace std;
 
+/* 10.1 递推求解 */    
 
-/* 12.1 递推求解 */     // 进度：2/2
-
-
-// 华中科技大学机试题T121 N阶楼梯上楼问题 √
+// 华中科技大学机试题T121 N阶楼梯上楼问题
 void HUS_121(){
     int N;
     while(cin >> N){
@@ -15,7 +13,7 @@ void HUS_121(){
     }
 }
 
-// 北京大学机试题T120 吃糖果 √
+// 北京大学机试题T120 吃糖果 
 void PeKing_120(){ 
     int N;
     while(cin >> N){
@@ -23,4 +21,3 @@ void PeKing_120(){
         cout << count << endl;
     }
 }
-
