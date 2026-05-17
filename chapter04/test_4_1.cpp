@@ -2,10 +2,9 @@
 #include <vector>
 using namespace std;
 
+/* 4.1 向量 */   
 
-/* 5.1 向量 */    // 进度：1/1
-
-// 清华大学机试题T119 完数VS盈数 √
+// 清华大学机试题T119 完数VS盈数
 int Sum(int x){         // 求一个数的因子之和
     int sum = 0;
     for(int i = 1; i < x; i++){
@@ -37,5 +36,3 @@ void TsingHua_119(){
     }
     cout << endl;
 }
-
-
