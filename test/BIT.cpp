@@ -8,15 +8,12 @@
 #include <cmath>
 using namespace std;
 
-
-/* 北京理工大学复试上机题 */    // 进度：24/27
-
+/* 北京理工大学复试上机题 */   
 
 // 北京理工大学机试题T1 表达式求值 未完成！
 void BIT_1(){ 
 
 }
-
 
 // 北京理工大学机试题T2 等腰梯形
 void BIT_2(){
@@ -38,7 +35,6 @@ void BIT_2(){
         }
     }
 }
-
 
 // 北京理工大学机试题T3 字符大小写交替
 string getStrByChar(char ch){
@@ -67,7 +63,6 @@ void BIT_3(){
     }    
 }
 
-
 // 北京理工大学机试题T100 分段函数
 double func(int x){
     double res = 0;
@@ -91,7 +86,6 @@ void BIT_100(){
     }
 }
 
-
 // 北京理工大学机试题T101 整数和
 void BIT_101(){
     int m, N;
@@ -112,12 +106,10 @@ void BIT_101(){
     }    
 }
 
-
 // 北京理工大学机试题T102 围圈报数 未完成！
 void BIT_102(){
 
 }
-
 
 // 北京理工大学机试题T103 阶乘
 void BIT_103(){
@@ -133,7 +125,6 @@ void BIT_103(){
     }
 }
 
-
 // 北京理工大学机试题T104 球的计算
 void BIT_104(){
     int m, x0, y0, z0, x1, y1, z1;
@@ -147,7 +138,6 @@ void BIT_104(){
         printf("%0.2lf %0.2lf\n", r, vul);
     }    
 }
-
 
 // 北京理工大学机试题T105 学生查询
 struct Student{
@@ -173,7 +163,6 @@ void BIT_105(){
         cout << num << " " << stu.name << " " << stu.gender << " " << stu.age << endl;
     }
 }
-
 
 // 北京理工大学机试题T106 计算天数
 const int days[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -217,7 +206,6 @@ void BIT_106(){
     }
 }
 
-
 // 北京理工大学机试题T107 重载运算符
 struct Angle{
     int angle;
@@ -246,7 +234,6 @@ void BIT_107(){
     }
 }
 
-
 // 北京理工大学机试题T108 多项式的值
 void BIT_108(){
     int m, n, x;
@@ -267,7 +254,6 @@ void BIT_108(){
         cout << res << endl;
     }
 }
-
 
 // 北京理工大学机试题T110 复数
 struct Complexity{
@@ -310,7 +296,6 @@ void BIT_110(){
     }
 }
 
-
 // 北京理工大学机试题T111 判断数字位置
 void BIT_111(){ 
     int m;
@@ -328,7 +313,6 @@ void BIT_111(){
         cout << endl;
     }
 }
-
 
 // 北京理工大学机试题T112 整型存储
 void BIT_112(){
@@ -359,7 +343,6 @@ void BIT_112(){
         count++;
     }
 }
-
 
 // 北京理工大学机试题T113 三角形相加
 struct CTriangle {
@@ -400,7 +383,6 @@ void BIT_113(){
     }
 }
 
-
 // 北京理工大学机试题T114 弹地小球
 void BIT_114(){ 
     int m, n;
@@ -417,7 +399,6 @@ void BIT_114(){
         printf("%0.2lf\n", sum);
     }
 }
-
 
 // 北京理工大学机试题T115 点的距离
 struct CPoint{
@@ -445,7 +426,6 @@ void BIT_115(){
     }
 }
 
-
 // 北京理工大学机试题T116 直角三角形
 void BIT_116(){
     int m, x1, y1, x2, y2, x3, y3;
@@ -467,7 +447,6 @@ void BIT_116(){
     }
 }
 
-
 // 北京理工大学机试题T118 编排字符串
 void BIT_117(){
     int m;
@@ -486,7 +465,6 @@ void BIT_117(){
         cout << endl;
     }
 }
-
 
 // 北京理工大学机试题T119 分组统计 未完成！
 void BIT_119(){
@@ -541,7 +519,6 @@ void BIT_120(){
     }
 }
 
-
 // 北京理工大学机试题T121 加法等式
 void BIT_121(){
     for(int a = 0; a <= 9; a++){
@@ -556,7 +533,6 @@ void BIT_121(){
         }
     }
 }
-
 
 // 北京理工大学机试题T122 完数与盈数
 int getSum(int num){
@@ -591,7 +567,6 @@ void BIT_122(){
     cout << endl;
 }
 
-
 // 北京理工大学机试题T123 反序相等
 void BIT_123(){ 
     for(int N = 1000; N <= 9999; N++){
@@ -605,7 +580,6 @@ void BIT_123(){
         }
     }
 }
-
 
 // 北京理工大学机试题T124 邮票
 void dfs_subset(const vector<int>& items, vector<int>& path, int start, vector<vector<int>>& res){
@@ -656,7 +630,6 @@ void BIT_124(){
     cout << result << endl;
 }
 
-
 // 北京理工大学机试题T125 对称平方数
 void BIT_125(){
     for(int n = 1; n < 256; n++){
@@ -677,6 +650,3 @@ void BIT_125(){
         }
     }
 }
-
-
-
