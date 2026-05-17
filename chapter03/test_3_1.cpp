@@ -5,7 +5,6 @@
 #include "test_3_1.hpp"
 using namespace std;
 
-
 /* 3.1 字符串处理 */ 
 
 // 清华大学机试题T117 特殊乘法 
