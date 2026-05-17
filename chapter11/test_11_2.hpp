@@ -4,7 +4,6 @@
 #include <unordered_map>
 using namespace std;
 
-
 /* 11.2 并查集 */
 
 const int MAX_SIZE = 100;
