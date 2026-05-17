@@ -3,10 +3,9 @@
 #include "test_5_2.hpp"
 using namespace std;
 
+/* 5.2 最大公约数与最小公倍数 */  
 
-/* 6.2 最大公约数与最小公倍数 */   // 进度：2/2
-
-// 哈尔滨工业大学机试题T161 最大公约数 √
+// 哈尔滨工业大学机试题T161 最大公约数 
 void HaGongDa_161(){
     int a, b;
     while(cin >> a >> b){
@@ -14,7 +13,7 @@ void HaGongDa_161(){
     }
 }
 
-// 北京大学机试题T107 最简真分数 √
+// 北京大学机试题T107 最简真分数 
 void PeKing_107(){
     int n;
     while(cin >> n){
