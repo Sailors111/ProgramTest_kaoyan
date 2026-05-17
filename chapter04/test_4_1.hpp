@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+/* 4.1 向量 */ 
 
 // 二分查找
 int binary_search(const vector<int>& items, int target){
@@ -19,7 +20,6 @@ int binary_search(const vector<int>& items, int target){
     }
     return -1;
 }
-
 
 // 两数之和
 vector<vector<int>> twoSum(vector<int> items, int target) {
