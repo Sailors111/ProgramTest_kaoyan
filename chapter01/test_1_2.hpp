@@ -92,5 +92,3 @@ void printDate(int year, int month, int day){
     }
     cout << day << endl;
 }
-
-
