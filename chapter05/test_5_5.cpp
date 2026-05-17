@@ -2,10 +2,9 @@
 #include "test_5_5.hpp"
 using namespace std;
 
+/* 5.5 快速幂 */ 
 
-/* 6.5 快速幂 */  // 进度：1/1
-
-// 清华大学机试题T115 求root(N, k)（难） √
+// 清华大学机试题T115 求root(N, k)（难） 
 void TsingHua_115(){
     long long x, y;
     int k;
@@ -13,5 +12,3 @@ void TsingHua_115(){
         cout << root(x, y, k) << endl;
     }
 }
-
-
