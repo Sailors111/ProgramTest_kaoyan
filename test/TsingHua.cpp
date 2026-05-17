@@ -8,7 +8,7 @@ using namespace std;
 
 /* 清华大学复试上机题 */
 
-// 清华大学机试题T1 公司 √
+// 清华大学机试题T1 公司
 void TsingHua_1(){ 
     int n, m;
     while(cin >> n >> m){
@@ -38,8 +38,7 @@ void TsingHua_1(){
     }
 }
 
-
-// 清华大学机试题T14 Prime √
+// 清华大学机试题T14 Prime 
 bool isPrime(unsigned int N){
     if(N == 2){
         return true;
@@ -77,5 +76,3 @@ void TsingHua_14(){
         cout << res << endl;
     }
 }
-
-
