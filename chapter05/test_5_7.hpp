@@ -2,8 +2,7 @@
 #include <string>
 using namespace std;
 
-
-/* 6.7 高精度整数 */
+/* 5.7 高精度整数 */
 
 // 高精度无符号整数
 struct BigInteger{
