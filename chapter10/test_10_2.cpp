@@ -4,11 +4,9 @@
 #include "test_10_2.hpp"
 using namespace std;
 
+/* 10.2 背包问题 */     
 
-/* 12.5 背包问题 */     // 进度：3/3
-
-
-// 北京大学机试题T137 点菜问题 √
+// 北京大学机试题T137 点菜问题 
 void PeKing_137(){
     int C, N;
     while(cin >> C >> N){
@@ -21,7 +19,7 @@ void PeKing_137(){
     }
 }
 
-// 北京大学机试题T146 采药 √
+// 北京大学机试题T146 采药 
 void PeKing_146(){ 
     int T, M;
     while(cin >> T >> M){
@@ -34,7 +32,7 @@ void PeKing_146(){
     }
 }
 
-// 清华大学机试题T113 最小邮票数 √
+// 清华大学机试题T113 最小邮票数 
 
 // 方法一：动态规划
 void TsingHua_113_1(){
@@ -98,5 +96,3 @@ void TsingHua_113_2(){
         }
     }
 }
-
-
