@@ -2,10 +2,9 @@
 #include "test_5_6.hpp"
 using namespace std;
 
+/* 5.6 矩阵与矩阵快速幂 */   
 
-/* 6.6 矩阵与矩阵快速幂 */   // 进度：4/4
-
-// 哈尔滨工业大学机试题T171 计算两个矩阵的乘积 √
+// 哈尔滨工业大学机试题T171 计算两个矩阵的乘积 
 void HaGongDa_171(){
     Matrix A(2, 3), B(3, 2);
     cin >> A;
@@ -14,7 +13,7 @@ void HaGongDa_171(){
     cout << C;
 }
 
-// 北京邮电大学T104 矩阵幂 √
+// 北京邮电大学T104 矩阵幂 
 void BUP_104(){
     int n, k;
     while(cin >> n >> k){
@@ -29,7 +28,7 @@ void BUP_104(){
     }
 }
 
-// 浙江大学机试题T137 A + B for Matrices √
+// 浙江大学机试题T137 A + B for Matrices 
 void ZJU_137(){
     int M, N;
     while (cin >> M >> N) {
@@ -70,7 +69,7 @@ void ZJU_137(){
     }
 }
 
-// 清华大学机试题T120 递推数列 √
+// 清华大学机试题T120 递推数列 
 void TsingHua_120(){
     // 动态规划法
     long long a0, a1, p, q, k;
