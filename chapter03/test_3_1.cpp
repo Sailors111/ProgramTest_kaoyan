@@ -6,9 +6,9 @@
 using namespace std;
 
 
-/* 4.2 字符串处理 */    //进度：10/10
+/* 3.1 字符串处理 */ 
 
-// 清华大学机试题T117 特殊乘法 √
+// 清华大学机试题T117 特殊乘法 
 void TsingHua_117(){
     string str1, str2;
     while(cin >> str1 >> str2){
@@ -24,7 +24,7 @@ void TsingHua_117(){
     }
 }
 
-// 北京大学机试题T105 密码翻译 √
+// 北京大学机试题T105 密码翻译 
 void PeKing_105(){
     string str;
     while(getline(cin, str)){
@@ -39,7 +39,7 @@ void PeKing_105(){
     }
 }
 
-// 北京大学机试题T161 简单密码 √
+// 北京大学机试题T161 简单密码 
 void PeKing_161(){
     string str;
     while(getline(cin, str)){
@@ -59,7 +59,7 @@ void PeKing_161(){
     }
 }
 
-// 浙江大学机试题T111 统计字符 √
+// 浙江大学机试题T111 统计字符 
 void ZJU_111(){
     string S, T;         // S为主串，T为模式串
     while(getline(cin, T)){
@@ -78,7 +78,7 @@ void ZJU_111(){
     }
 }
 
-// 上海交通大学机试题T122 字母统计 √
+// 上海交通大学机试题T122 字母统计 
 void SJU_122(){
     string str;
     while(getline(cin, str)){
@@ -98,7 +98,7 @@ void SJU_122(){
     }
 }
 
-// 北京大学机试题T117 skew数 √
+// 北京大学机试题T117 skew数 
 void PeKing_117(){
     string str;
     while(cin >> str){
@@ -111,7 +111,7 @@ void PeKing_117(){
     }
 }
 
-// 北京大学机试题T118 单词替换 √
+// 北京大学机试题T118 单词替换 
 void PeKing_118(){
     string str, S, T;
     while(getline(cin, str)){
@@ -130,7 +130,7 @@ void PeKing_118(){
     }
 }
 
-// 北京大学机试题T129 首字母大写 √
+// 北京大学机试题T129 首字母大写 
 void PeKing_129(){
     string str;
     while(getline(cin, str)){
@@ -149,7 +149,7 @@ void PeKing_129(){
     }
 }
 
-// 北京大学机试题T150 浮点数加法 √
+// 北京大学机试题T150 浮点数加法 
 void PeKing_150(){
     string S, T;
     while (cin >> S >> T) {
@@ -158,7 +158,7 @@ void PeKing_150(){
     }
 }
 
-// 上海交通大学机试题T124 后缀子串排序 √
+// 上海交通大学机试题T124 后缀子串排序 
 void SJU_124(){
     string str;
     while(cin >> str){
