@@ -3,6 +3,8 @@
 #include <algorithm>
 using namespace std;
 
+/* 7.1 递归 */  
+
 // N的阶乘
 long long Factorial(long long num){
     if(num == 0){
