@@ -4,9 +4,9 @@
 #include "test_4_2.hpp"
 using namespace std;
 
-/* 5.3 栈 */      // 进度：4/4
+/* 5.2 栈与队列 */      
 
-// 上海交通大学机试题T118 Zero-complexity Transposition √
+// 上海交通大学机试题T118 Zero-complexity Transposition
 void SJU_118(){
     int n;
     while(cin >> n){
@@ -25,7 +25,7 @@ void SJU_118(){
     }
 }
 
-// 浙江大学机试题T113 简单计算器 √
+// 浙江大学机试题T113 简单计算器
 void ZJU_113(){
     string str;
     while(getline(cin, str)){
@@ -38,7 +38,7 @@ void ZJU_113(){
     }
 }
 
-// 吉林大学机试题T180 堆栈的使用 √
+// 吉林大学机试题T180 堆栈的使用
 void JLU_180(){
     int n;
     while (cin >> n) {
@@ -68,7 +68,7 @@ void JLU_180(){
     }
 }
 
-// 上海交通大学机试题T111 计算表达式 √
+// 上海交通大学机试题T111 计算表达式
 void SJU_111(){
     string str;
     while(getline(cin, str)){
