@@ -4,10 +4,9 @@
 #include <algorithm>
 using namespace std;
 
+/* 6.1 简单贪心 */  
 
-/* 7.1 简单贪心 */  // 进度：2/2
-
-// 北京大学机试题T158 鸡兔同笼 √
+// 北京大学机试题T158 鸡兔同笼 
 void PeKing_158(){
     int total;
     while(cin >> total){
