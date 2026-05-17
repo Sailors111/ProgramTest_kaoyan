@@ -3,11 +3,9 @@
 #include "test_9_1.hpp"
 using namespace std;
 
+/* 9.1 二叉树 */   
 
-/* 10.1 二叉树 */   // 进度：2/2
-
-
-// 清华大学机试题T110 二叉树遍历 √
+// 清华大学机试题T110 二叉树遍历 
 void preorder_insert(TreeNode*& root, string str, int& i){
     if(i == str.size()){
         return;
@@ -35,7 +33,7 @@ void TsingHua_110(){
 }
 
 
-// 华中科技大学机试题T108 二叉树遍历（难）√
+// 华中科技大学机试题T108 二叉树遍历（难）
 void visit_(TreeNode* root) {
     cout << root->val;
 }
