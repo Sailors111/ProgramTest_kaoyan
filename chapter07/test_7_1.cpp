@@ -4,10 +4,9 @@
 #include "test_7_1.hpp"
 using namespace std;
 
+/* 7.1 递归 */     
 
-/* 8.1 递归 */     // 进度：2/2
-
-// 清华大学机试题T116 n的阶乘 √
+// 清华大学机试题T116 n的阶乘 
 void TsingHua_116(){
     int num;
     while(cin >> num){
@@ -15,7 +14,7 @@ void TsingHua_116(){
     }
 }
 
-// 北京大学机试题T115 全排列（难） √
+// 北京大学机试题T115 全排列（难） 
 void PeKing_115(){
     string str;
     while(cin >> str){
@@ -25,5 +24,3 @@ void PeKing_115(){
         }
     }
 }
-
-
