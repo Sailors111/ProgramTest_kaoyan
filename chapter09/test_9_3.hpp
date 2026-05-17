@@ -3,7 +3,6 @@
 #include <queue>
 using namespace std;
 
-
 /* 9.3 优先队列 */
 
 // 哈夫曼树定义
