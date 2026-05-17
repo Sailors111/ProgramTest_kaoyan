@@ -4,11 +4,9 @@
 #include <unordered_map>
 using namespace std;
 
+/* 9.4 哈希表 */  
 
-/* 10.4 哈希表 */   // 进度：6/6
-
-
-// 清华大学机试题T126 查找学生信息 √
+// 清华大学机试题T126 查找学生信息
 struct Student{
     string name;
     string gender;
@@ -51,7 +49,7 @@ void TsingHua_126(){
     }
 }
 
-// 浙江大学机试题T130 魔咒词典（难）√
+// 浙江大学机试题T130 魔咒词典（难）
 void ZJU_130(){
     string str;
     unordered_map<string, string> map;
@@ -79,7 +77,7 @@ void ZJU_130(){
     }
 }
 
-// 北京大学机试题T139 子串计算 √
+// 北京大学机试题T139 子串计算 
 void Peking_139(){ 
     string str;
     while(cin >> str){
@@ -104,7 +102,7 @@ void Peking_139(){
     }
 }
 
-// 浙江大学机试题T120 统计同成绩同学人数 √
+// 浙江大学机试题T120 统计同成绩同学人数 
 void ZJU_120(){
     int N;
     while(cin >> N){
@@ -130,7 +128,7 @@ void ZJU_120(){
     }
 }
 
-// 浙江大学机试题T124 开门人和关门人 √
+// 浙江大学机试题T124 开门人和关门人 
 void ZJU_124(){
     int N;
     while(cin >> N){
@@ -147,7 +145,7 @@ void ZJU_124(){
     }
 }   
 
-// 北京大学机试题T101 谁是你的潜在朋友 √
+// 北京大学机试题T101 谁是你的潜在朋友 
 void Peking_101(){
     int N, M;
     while(cin >> N >> M){
@@ -172,6 +170,3 @@ void Peking_101(){
         }
     }
 }
-
-
-
