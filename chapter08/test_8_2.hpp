@@ -3,8 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-
-/* 9.2 深度优先搜索 */
+/* 8.2 深度优先搜索 */
 
 /*
     核心逻辑：选择-递归-回溯
@@ -164,5 +163,4 @@ vector<vector<pair<int, int>>> maze_path(const vector<vector<int>>& maze, int x,
     dfs_maze(maze, path, visited, x, y, end_x, end_y, res);
     return res;
 }
-
 
