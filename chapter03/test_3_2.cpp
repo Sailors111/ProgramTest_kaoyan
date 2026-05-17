@@ -5,10 +5,9 @@
 #include "test_3_1.hpp"
 using namespace std;
 
-/* 4.3 字符串匹配 */    //进度：2/2
+/* 3.2 字符串匹配 */    
 
-
-// 北京航空航天大学机试题T105 字符串匹配 √
+// 北京航空航天大学机试题T105 字符串匹配
 void BUA_105(){
     int n;
     while (cin >> n) {
@@ -47,7 +46,7 @@ void BUA_105(){
     }
 }
 
-// 上海交通大学机试题T100 String Matching √
+// 上海交通大学机试题T100 String Matching 
 void SJU_100(){
     string test, pattern;
     while(cin >> test >> pattern){
