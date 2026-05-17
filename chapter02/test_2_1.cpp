@@ -4,9 +4,9 @@
 #include <algorithm>
 using namespace std;
 
-/* 3.1 排序 */  // 进度：6/7
+/* 2.1 排序 */  
 
-//华中科技大学机试题T106 排序 √
+//华中科技大学机试题T106 排序
 void HSU_106(){
     int n;
     while(cin >> n){
@@ -23,7 +23,7 @@ void HSU_106(){
     }
 }
 
-// 清华大学机试题T108 成绩排序1 √
+// 清华大学机试题T108 成绩排序1
 struct Student{
     int num;
     int score;
@@ -53,7 +53,7 @@ void TsingHua_108(){
     }
 }
 
-// 清华大学机试题T101 成绩排序2 √
+// 清华大学机试题T101 成绩排序2
 struct User {
     string name;
     int score;
@@ -96,7 +96,7 @@ void TsingHua_101(){
     }
 }
 
-// 华中科技大学机试题T107 特殊排序 √
+// 华中科技大学机试题T107 特殊排序
 void HSU_107(){
     int N;
     while (scanf("%d", &N) != EOF) {
@@ -125,7 +125,7 @@ void HSU_107(){
     }
 }
 
-// 北京大学机试题T138 整数奇偶排序 √
+// 北京大学机试题T138 整数奇偶排序
 bool compare_inc_int(int x, int y){
     return x < y;
 }
@@ -160,7 +160,7 @@ void PeKing_138(){
     }
 }
 
-// 北京大学机试题T109 小白鼠排队 √
+// 北京大学机试题T109 小白鼠排队
 struct Mouse{
     int weight;
     string color;
@@ -184,10 +184,3 @@ void PeKing_109(){
         delete[] arr;
     }
 }
-
-// 浙江大学机试题T101 奥运排序问题  // 未完成！
-void ZJU_101(){
-
-}
-
-
