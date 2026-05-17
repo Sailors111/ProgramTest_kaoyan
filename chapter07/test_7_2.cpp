@@ -2,10 +2,9 @@
 #include "test_7_2.hpp"
 using namespace std;
 
+/* 7.2 分治 */    
 
-/* 8.2 分治 */     // 进度：3/3
-
-// 上海交通大学机试题T105 Fibonacci √
+// 上海交通大学机试题T105 Fibonacci 
 void SJU_105(){
     int num;
     while(cin >> num){
@@ -13,7 +12,7 @@ void SJU_105(){
     }
 }
 
-// 北京大学机试题T156 二叉树 √
+// 北京大学机试题T156 二叉树 
 void PeKing_156(){
     int m, n;
     while(cin >> m >> n){
