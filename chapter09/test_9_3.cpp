@@ -3,13 +3,11 @@
 #include "test_9_3.hpp"
 using namespace std;
 
+/* 9.3 优先队列 */  
 
-/* 10.3 优先队列 */     // 进度：4/4
+/* 9.3.1 顺序问题 */
 
-
-/* 10.3.1 顺序问题 */
-
-// 北京邮电大学机试题T108 复数集合 √
+// 北京邮电大学机试题T108 复数集合 
 struct Complexity {
     int x;
     int y;
@@ -52,7 +50,7 @@ void BUP_108(){
     }
 }
 
-// 北京邮电大学机试题T103 查找第K小的数 √
+// 北京邮电大学机试题T103 查找第K小的数 
 struct Compare_Int{
     bool operator()(const int x, const int y){
         return x > y;
@@ -81,10 +79,9 @@ void BUP_103(){
     }
 }
 
+/* 9.3.2 哈夫曼树 */
 
-/* 10.3.2 哈夫曼树 */
-
-// 北京邮电大学机试题T101 哈夫曼树 √
+// 北京邮电大学机试题T101 哈夫曼树 
 void BUP_101(){
     int n;
     while (cin >> n) {
@@ -98,7 +95,7 @@ void BUP_101(){
     }
 }
 
-// 吉林大学机试题T179 搬水果 √
+// 吉林大学机试题T179 搬水果 
 void JLU_179(){
     int n;
     while(cin >> n){
