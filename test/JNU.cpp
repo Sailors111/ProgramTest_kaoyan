@@ -6,8 +6,7 @@
 #include <algorithm>
 using namespace std;
 
-/* 暨南大学复试上机题 */    // 进度：13/14
-
+/* 暨南大学复试上机题 */ 
 
 // 暨南大学机试题T1 单词逆序-1
 vector<string> split(const string& str){
@@ -48,7 +47,6 @@ void JNU_1(){
     }
 }
 
-
 // 暨南大学机试题T2 单词逆序-2
 bool isWord(char ch) {
     if ('a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z') {
@@ -82,7 +80,6 @@ void JNU_2(){
     }
 }
 
-
 // 暨南大学机试题T3 二分查找
 int binary_search(const vector<int>& nums, int target){
     int left = 0, right = nums.size() - 1;
@@ -111,7 +108,6 @@ void JNU_3(){
     }
 }
 
-
 // 暨南大学机试题T4 矩阵旋转
 void JNU_4(){
     int n, m;
@@ -133,7 +129,6 @@ void JNU_4(){
     }
 }
 
-
 // 暨南大学机试题T5 爬楼梯
 void JNU_5(){
     int n;
@@ -148,7 +143,6 @@ void JNU_5(){
     }
 }
 
-
 // 暨南大学机试题T6 区间合并1
 void JNU_6(){
     int a1, b1, a2, b2;
@@ -160,7 +154,6 @@ void JNU_6(){
         }        
     }
 }
-
 
 // 暨南大学机试题T7 区间合并2（难）（本题[1, 2]和[2, 3]算重合，[1, 2]和[3, 4]算相邻，均可合并）
 struct Round{
@@ -224,7 +217,6 @@ void JNU_7(){
     }
 }
 
-
 // 暨南大学机试题T8 数组逆序
 void JNU_8(){ 
     int n;
@@ -239,7 +231,6 @@ void JNU_8(){
         cout << endl;
     }
 }
-
 
 // 暨南大学机试题T9 矩阵乘法
 void JNU_9(){
@@ -273,7 +264,6 @@ void JNU_9(){
     }
 }
 
-
 // 暨南大学机试题T10 完全平方数（难）
 void JNU_10(){
     int n;
@@ -296,7 +286,6 @@ void JNU_10(){
         cout << dp[n] << endl;
     }
 }
-
 
 // 暨南大学机试题T11 二元素数组
 bool isPrime(int num){
@@ -353,12 +342,10 @@ void JNU_11(){
     }
 }
 
-
 // 暨南大学机试题T12 逆序对的数量（难）未完成！
 void JNU_12(){ 
 
 }
-
 
 // 暨南大学机试题T13 删除区间
 bool _compare(pair<long long, long long> x, pair<long long, long long> y){
@@ -384,7 +371,6 @@ int JNU_13(){
         cout << n - count << endl;
     }
 }
-
 
 // 暨南大学机试题T14 体重排序
 struct Person{
@@ -416,5 +402,3 @@ void JNU_14(){
         cout << endl;
     }
 }
-
-
