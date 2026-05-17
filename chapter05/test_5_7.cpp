@@ -3,10 +3,9 @@
 #include "test_5_7.hpp"
 using namespace std;
 
+/* 5.7 高精度整数 */ 
 
-/* 6.7 高精度整数 */  // 进度：4/4
-
-// 华中科技大学机试题T105 a + b √
+// 华中科技大学机试题T105 a + b 
 void HUS_105(){
     BigInteger a, b;
     while(cin >> a >> b){
@@ -70,5 +69,3 @@ void PeKing_111(){
         cout << endl;
     }
 }
-
-
