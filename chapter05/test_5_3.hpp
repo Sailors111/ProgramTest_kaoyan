@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
-/* 6.3 质数 */
+/* 5.3 质数 */
 
 /* 
     质数判定定理：若一个数n不能被[2, sqrt(n)]内的任何质数整除，则n为质数。 
@@ -23,6 +22,3 @@ bool isPrime(long long num) {
         return true;
     }
 }
-
-
-
