@@ -4,7 +4,7 @@
 #include "test_4_2.hpp"
 using namespace std;
 
-/* 5.2 栈与队列 */      
+/* 4.2 栈与队列 */      
 
 // 上海交通大学机试题T118 Zero-complexity Transposition
 void SJU_118(){
