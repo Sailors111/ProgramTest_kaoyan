@@ -3,6 +3,8 @@
 #include <stack>
 using namespace std;
 
+/* 4.2 栈与队列 */ 
+
 // 栈的应用-括号匹配
 bool isMatch(string str){ 
     stack<char> st;
