@@ -4,9 +4,9 @@
 #include <algorithm>
 using namespace std;
 
-/* 3.2 查找 */   // 进度：5/5
+/* 2.2 查找 */ 
 
-// 哈尔滨工业大学机试题T158 找x √
+// 哈尔滨工业大学机试题T158 找x 
 void HaGongDa_158(){
     int n;
     while(scanf("%d", &n) != EOF){
@@ -29,7 +29,7 @@ void HaGongDa_158(){
 }
 
 
-// 北京邮电大学机试题T111 查找 √
+// 北京邮电大学机试题T111 查找 
 void BUP_111(){
     int n;
     while(scanf("%d", &n) != EOF){
@@ -61,7 +61,7 @@ void BUP_111(){
 }
 
 
-// 北京邮电大学机试题T110 找最小数 √
+// 北京邮电大学机试题T110 找最小数 
 struct Data{
     int x;
     int y;
@@ -88,7 +88,7 @@ void BUP_110(){
 }
 
 
-// 北京大学机试题T126 打印极值点下标 √
+// 北京大学机试题T126 打印极值点下标 
 bool is_extramal_max(int arr[], int x, int len) {  // 求极大值
     if(x == 0){
         return arr[x] > arr[x + 1];
@@ -132,7 +132,7 @@ void PeKing_126(){
 }
 
 
-// 华中科技大学机试题T124 找位置 √
+// 华中科技大学机试题T124 找位置 
 void HUS_124(){
     string str;
     while (cin >> str) {
@@ -158,5 +158,3 @@ void HUS_124(){
         }
     }
 }
-
-
