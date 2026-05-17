@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E8%80%83%E7%A0%94%E6%9C%BA%E8%AF%95">考研机试</h1>
+<p><strong>本项目所有题目来自牛客计算机考研题库</strong><a href="https://www.nowcoder.com/kaoyan" target="_blank">https://www.nowcoder.com/kaoyan</a></p>
+<h2 id="chapter01-%E5%AF%BC%E8%AE%BA">Chapter01 导论</h2>
+<h2 id="chapter02-%E6%9E%9A%E4%B8%BE%E4%B8%8E%E6%A8%A1%E6%8B%9F">Chapter02 枚举与模拟</h2>
+<h3 id="21-%E6%9E%9A%E4%B8%BE">2.1 枚举</h3>
+<ul>
+<li>输入输出</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">int</span> n;
+    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span> &gt;&gt; n){    <span class="hljs-comment">// 循环输入单个字符串，不含空格、换行符</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>;
+    }
+    <span class="hljs-built_in">string</span> str;
+    <span class="hljs-keyword">while</span>(getline(<span class="hljs-built_in">cin</span>, str)){  <span class="hljs-comment">// 循环输入一行字符串，包含空格、换行符，需导入&lt;string&gt;库</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>;
+    }
+}
+</div></code></pre>
+<h3 id="22-%E6%A8%A1%E6%8B%9F">2.2 模拟</h3>
+<ul>
+<li>日期问题</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> days[<span class="hljs-number">13</span>] = {<span class="hljs-number">0</span>, <span class="hljs-number">31</span>, <span class="hljs-number">28</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>};
+
+<span class="hljs-comment">// 判断闰年</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isLeapYear</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year)</span></span>{  
+    <span class="hljs-keyword">return</span> (year % <span class="hljs-number">4</span> == <span class="hljs-number">0</span> &amp;&amp; year % <span class="hljs-number">100</span> != <span class="hljs-number">0</span>) || (year % <span class="hljs-number">400</span> == <span class="hljs-number">0</span>);
+}
+
+<span class="hljs-comment">// 该月份的总天数</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getDaysOfMonth</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year, <span class="hljs-keyword">int</span> month)</span></span>{    
+    <span class="hljs-keyword">if</span>(month == <span class="hljs-number">2</span> &amp;&amp; isLeapYear(year)){
+        <span class="hljs-keyword">return</span> <span class="hljs-number">29</span>;
+    }
+    <span class="hljs-keyword">return</span> days[month];
+}
+
+<span class="hljs-comment">// 该年份的总天数</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getDaysOfYear</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year)</span> </span>{
+    <span class="hljs-keyword">return</span> isLeapYear(year) ? <span class="hljs-number">366</span> : <span class="hljs-number">365</span>;   
+}
+
+<span class="hljs-comment">// 日期转总天数</span>
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">dateToDays</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year, <span class="hljs-keyword">int</span> month, <span class="hljs-keyword">int</span> day)</span></span>{ <span class="hljs-comment">//y-m-d转1-1-1到y-m-d之间的总天数</span>
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; year; i++){
+        res += getDaysOfYear(i);
+    }
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; month; i++){
+        res += getDaysOfMonth(year, i);
+    }
+    res += day;
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-comment">// 总天数转日期</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">daysToDate</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> days, <span class="hljs-keyword">int</span>&amp; year, <span class="hljs-keyword">int</span>&amp; month, <span class="hljs-keyword">int</span>&amp; day)</span></span>{ <span class="hljs-comment">// 1-1-1到y-m-d之间的总天数转y-m-d</span>
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-number">0</span>;
+    year = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){
+        <span class="hljs-keyword">int</span> yd = getDaysOfYear(year);
+        <span class="hljs-keyword">if</span>(days &gt; yd){
+            days -= yd;
+            year++;
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    month = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){
+        <span class="hljs-keyword">int</span> md = getDaysOfMonth(year, month);
+        <span class="hljs-keyword">if</span>(days &gt; md){
+            days -= md;
+            month++;
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    day = days;
+}
+
+<span class="hljs-comment">// 两个日期相差天数</span>
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">diffDays</span><span class="hljs-params">(<span class="hljs-keyword">int</span> y1, <span class="hljs-keyword">int</span> m1, <span class="hljs-keyword">int</span> d1, <span class="hljs-keyword">int</span> y2, <span class="hljs-keyword">int</span> m2, <span class="hljs-keyword">int</span> d2)</span></span>{
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> days1 = dateToDays(y1, m1, d1);
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> days2 = dateToDays(y2, m2, d2);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">abs</span>(days1 - days2);
+}
+
+<span class="hljs-comment">// 求星期几</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getWeek</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year, <span class="hljs-keyword">int</span> month, <span class="hljs-keyword">int</span> day)</span> </span>{
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> base = dateToDays(<span class="hljs-number">2026</span>, <span class="hljs-number">2</span>, <span class="hljs-number">15</span>); <span class="hljs-comment">// 2026年2月15日为星期日</span>
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> now = dateToDays(year, month, day);
+    <span class="hljs-keyword">int</span> wd = ((now - base) % <span class="hljs-number">7</span> + <span class="hljs-number">7</span>) % <span class="hljs-number">7</span>;
+    <span class="hljs-keyword">return</span> wd;
+}
+
+<span class="hljs-comment">// 打印日期</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printDate</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year, <span class="hljs-keyword">int</span> month, <span class="hljs-keyword">int</span> day)</span></span>{    
+    <span class="hljs-built_in">cout</span> &lt;&lt; year &lt;&lt; <span class="hljs-string">"-"</span>;
+    <span class="hljs-keyword">if</span>(month &lt; <span class="hljs-number">10</span>){
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"0"</span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; month &lt;&lt; <span class="hljs-string">"-"</span>;
+    <span class="hljs-keyword">if</span>(day &lt; <span class="hljs-number">10</span>){
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"0"</span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; day &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</div></code></pre>
+<h2 id="chapter03-%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%9F%A5%E6%89%BE">Chapter03 排序与查找</h2>
+<h3 id="31-%E6%8E%92%E5%BA%8F">3.1 排序</h3>
+<ul>
+<li>sort函数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">compare</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>{
+    <span class="hljs-keyword">return</span> x &gt; y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">int</span> len;
+    <span class="hljs-built_in">cin</span> &gt;&gt; len;
+
+    <span class="hljs-keyword">int</span>* arr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[len];
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++){
+        arr[i] = len - i;
+    }
+    sort(arr, arr + len);  <span class="hljs-comment">// 正序排序</span>
+    sort(arr, arr + len, compare); <span class="hljs-comment">// 逆序排序</span>
+
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++){
+        vec.push_back(len - i);
+    }
+    sort(vec.begin(), vec.end()); <span class="hljs-comment">// 正序排序</span>
+    sort(vec.begin(), vec.end(), compare); <span class="hljs-comment">// 逆序排序</span>
+}
+</div></code></pre>
+<ul>
+<li>reverse函数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++){
+        vec.push_back(len - i);
+    }
+    reverse(vec.begin(), vec.end()); <span class="hljs-comment">// 反转数组</span>
+
+    <span class="hljs-built_in">string</span> str;
+    <span class="hljs-built_in">cin</span> &gt;&gt; str;
+    reverse(str.begin(), str.end()); <span class="hljs-comment">// 反转字符串</span>
+}
+</div></code></pre>
+<h3 id="32-%E6%9F%A5%E6%89%BE">3.2 查找</h3>
+<ul>
+<li>max_element函数与min_element函数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++){
+        vec.push_back(len - i);
+    }
+    <span class="hljs-keyword">if</span>(!vec.empty()){
+        <span class="hljs-keyword">int</span> max_val = *max_element(vec.begin(), vec.end()); <span class="hljs-comment">// 最大值</span>
+        <span class="hljs-keyword">int</span> min_val = *min_element(vec.begin(), vec.end()); <span class="hljs-comment">// 最小值</span>
+    }
+}
+</div></code></pre>
+<ul>
+<li>find函数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">int</span> len, val;
+    <span class="hljs-built_in">cin</span> &gt;&gt; len &gt;&gt; val;
+
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++){
+        vec.push_back(len - i);
+    }
+
+    <span class="hljs-keyword">if</span>(!vec.empty()){
+        <span class="hljs-keyword">auto</span> it = find(vec.begin(), vec.end(), val); <span class="hljs-comment">// 查找元素，查找失败返回vec.end()</span>
+         <span class="hljs-keyword">if</span>(it != vec.end()){ 
+            <span class="hljs-built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="hljs-built_in">endl</span>;
+        }
+    }
+}
+</div></code></pre>
+<h2 id="chapter04-%E5%AD%97%E7%AC%A6%E4%B8%B2">Chapter04 字符串</h2>
+<h3 id="41-%E5%AD%97%E7%AC%A6%E4%B8%B2">4.1 字符串</h3>
+<ul>
+<li>string</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">string</span> str, S, T;
+    <span class="hljs-built_in">cin</span> &gt;&gt; str &gt;&gt; S &gt;&gt; T;
+
+    <span class="hljs-comment">// 遍历</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; str.size(); i++){ <span class="hljs-comment">// 普通遍历</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; str[i] &lt;&lt; <span class="hljs-string">" "</span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-built_in">string</span>::iterator it = str.begin(); it != str.end(); it++){ <span class="hljs-comment">// 迭代器遍历</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="hljs-string">" "</span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp; it : str){ <span class="hljs-comment">// 智能指针遍历</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; it &lt;&lt; <span class="hljs-string">" "</span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-comment">// 字符串长度</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; str.size() &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-comment">// 字符串判空</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; str.empty() &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-comment">// 字符串拼接</span>
+    str += S;
+    <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-comment">// 字符串比较</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; (S &lt; T) &lt;&lt; <span class="hljs-string">" "</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; (S &gt; T) &lt;&lt; <span class="hljs-string">" "</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; (S == T) &lt;&lt; <span class="hljs-string">" "</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; (S != T) &lt;&lt; <span class="hljs-string">" "</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+    
+    <span class="hljs-comment">// 字符串查找find(str, pos)</span>
+    <span class="hljs-keyword">int</span> pos = str.find(S), len = S.size();
+    <span class="hljs-keyword">if</span>(pos != <span class="hljs-built_in">string</span>::npos){
+        <span class="hljs-built_in">cout</span> &lt;&lt; str.find(S) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 从str[0]开始查找字符串S，找到返回第一个字符串的下标，找不到返回string::npos</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; str.find(S, pos) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 从str[pos]开始查找字符串S，找到返回第一个字符串的下标，找不到返回string::npos</span>
+    }
+
+    <span class="hljs-comment">// 取字符串子串substr(pos, len)</span>
+    <span class="hljs-keyword">if</span>(pos != <span class="hljs-built_in">string</span>::npos){
+        <span class="hljs-built_in">string</span> substr = str.substr(pos, len); <span class="hljs-comment">// 从str[pos]开始，取长度为len的子串</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; substr &lt;&lt; <span class="hljs-built_in">endl</span>;
+    }
+    
+    <span class="hljs-comment">// 字符串替换replace(pos, len, str)</span>
+    <span class="hljs-keyword">if</span>(pos != <span class="hljs-built_in">string</span>::npos){
+        str.replace(pos, len, T); <span class="hljs-comment">// 从str[pos]开始，把长度为len的子串替换为T</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>;
+    }
+
+    <span class="hljs-comment">// 删除字符串子串erase(pos, len)</span>
+    pos = str.find(T), len = T.size();
+    <span class="hljs-keyword">if</span>(pos != <span class="hljs-built_in">string</span>::npos){
+        str.erase(pos, len); <span class="hljs-comment">// 从str[pos]开始，删除长度为len的子串</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>;
+    }
+
+    <span class="hljs-comment">// 字符串清空</span>
+    str.clear();
+    <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</div></code></pre>
+<h3 id="42-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">4.2 字符串处理</h3>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// 字符串替换</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">replaceAll</span><span class="hljs-params">(<span class="hljs-built_in">string</span>&amp; str, <span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span>&amp; S, <span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span>&amp; T)</span></span>{ <span class="hljs-comment">// 将str中所有的S替换为T</span>
+    <span class="hljs-keyword">if</span>(S.empty()){
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">size_t</span> pos = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>((pos = str.find(S, pos)) != <span class="hljs-built_in">string</span>::npos){
+        str.replace(pos, S.size(), T);
+        pos += T.size();
+    }
+}
+
+<span class="hljs-comment">// 字符串分割</span>
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt; <span class="hljs-title">split</span><span class="hljs-params">(<span class="hljs-built_in">string</span> str, <span class="hljs-keyword">char</span> ch)</span> </span>{ <span class="hljs-comment">// 将str按ch为界分割</span>
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt; vec;
+    <span class="hljs-keyword">int</span> start = <span class="hljs-number">0</span>, len = str.size();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> end = <span class="hljs-number">0</span>; end &lt; len; end++) {
+        <span class="hljs-keyword">if</span> (str[end] == ch) {
+            vec.push_back(str.substr(start, end - start));
+            <span class="hljs-keyword">while</span> (end &lt; len &amp;&amp; str[end] == ch) {
+                end++;
+            }
+            start = end;
+        }
+    }
+    <span class="hljs-keyword">if</span> (start &lt; len) {
+        vec.push_back(str.substr(start));
+    }
+    <span class="hljs-keyword">return</span> vec;
+}
+
+<span class="hljs-comment">// 字符串大小写</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">toLower</span><span class="hljs-params">(<span class="hljs-built_in">string</span>&amp; str)</span></span>{     <span class="hljs-comment">// 将字符串中的大写字母转为小写字母</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; str.size(); i++){
+        <span class="hljs-keyword">if</span>(str[i] &gt;= <span class="hljs-string">'A'</span> &amp;&amp; str[i] &lt;= <span class="hljs-string">'Z'</span>){
+            str[i] = str[i] - <span class="hljs-string">'A'</span> + <span class="hljs-string">'a'</span>;
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">toUpper</span><span class="hljs-params">(<span class="hljs-built_in">string</span>&amp; str)</span></span>{     <span class="hljs-comment">// 将字符串中的小写字母转为大写字母</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; str.size(); i++){
+        <span class="hljs-keyword">if</span>(str[i] &gt;= <span class="hljs-string">'a'</span> &amp;&amp; str[i] &lt;= <span class="hljs-string">'z'</span>){
+            str[i] = str[i] - <span class="hljs-string">'a'</span> + <span class="hljs-string">'A'</span>;
+        }
+    }
+}
+</div></code></pre>
+<h2 id="chapter05-%E5%88%9D%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">Chapter05 初级数据结构</h2>
+<h3 id="51-%E5%90%91%E9%87%8F">5.1 向量</h3>
+<ul>
+<li>vector</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;
+    <span class="hljs-keyword">int</span> n, val;
+    <span class="hljs-built_in">cin</span> &gt;&gt; n &gt;&gt; val;
+
+    <span class="hljs-comment">// 初始化</span>
+    vec = {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}; <span class="hljs-comment">// 直接赋值</span>
+    vec = <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;(); <span class="hljs-comment">// 初始化为空向量</span>
+    vec = <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;(n); <span class="hljs-comment">// 长度为n，全部初始化为0</span>
+    vec = <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;(n, val); <span class="hljs-comment">// 长度为n，全部初始化为val</span>
+
+    <span class="hljs-comment">// 遍历</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; vec.size(); i++){    <span class="hljs-comment">// 普通遍历</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; vec[i] &lt;&lt; <span class="hljs-string">" "</span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;::iterator it = vec.begin(); it != vec.end(); it++){ <span class="hljs-comment">// 迭代器遍历</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="hljs-string">" "</span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp; it : vec){   <span class="hljs-comment">// 智能指针遍历</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; it &lt;&lt; <span class="hljs-string">" "</span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-comment">// 插入</span>
+    vec = <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;();
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++){
+        vec.push_back(i);   <span class="hljs-comment">// 在末尾插入元素</span>
+    }
+    vec.insert(vec.end(), n); <span class="hljs-comment">// 在vec.end()后插入元素</span>
+
+    <span class="hljs-comment">// 删除</span>
+    vec.pop_back(); <span class="hljs-comment">// 删除末尾元素</span>
+    vec.erase(vec.begin()); <span class="hljs-comment">// 删除vec.begin()的元素</span>
+    vec.erase(vec.begin(), vec.begin() + n); <span class="hljs-comment">// 删除[vec.begin(), vec.begin() + n)区间内的元素</span>
+
+    <span class="hljs-comment">// 清空</span>
+    vec.clear();
+
+    <span class="hljs-comment">// 预分配内存</span>
+    vec.reserve(n);  <span class="hljs-comment">// 预分配长度为n的内存，提升性能</span>
+}
+</div></code></pre>
+<h3 id="52-%E9%98%9F%E5%88%97">5.2 队列</h3>
+<ul>
+<li>queue</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;queue&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt; q;
+    <span class="hljs-keyword">int</span> n;
+    <span class="hljs-built_in">cin</span> &gt;&gt; n;
+
+    <span class="hljs-comment">// 入队</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++){
+        q.push(i);
+    }
+    
+    <span class="hljs-comment">// 出队</span>
+    q.pop();
+
+    <span class="hljs-comment">// 取队头</span>
+    <span class="hljs-keyword">int</span> front = q.front();
+
+    <span class="hljs-comment">// 取队尾</span>
+    <span class="hljs-keyword">int</span> back = q.back();
+
+    <span class="hljs-comment">// 判队空</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; q.empty() &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</div></code></pre>
+<h3 id="53-%E6%A0%88">5.3 栈</h3>
+<ul>
+<li>stack</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stack&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">int</span>&gt; st;
+    <span class="hljs-keyword">int</span> n;
+    <span class="hljs-built_in">cin</span> &gt;&gt; n;
+
+    <span class="hljs-comment">// 入栈</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++){
+        st.push(i);
+    }
+
+    <span class="hljs-comment">// 出栈</span>
+    st.pop();
+
+    <span class="hljs-comment">// 取栈顶</span>
+    <span class="hljs-keyword">int</span> top = st.top();
+
+    <span class="hljs-comment">// 判栈空</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; st.empty() &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</div></code></pre>
+<h2 id="chapter06-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98">Chapter06 数学问题</h2>
+<h3 id="61-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2">6.1 进制转换</h3>
+<ul>
+<li>十进制数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// 取十进制数的反序数</span>
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">reverse</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> num)</span></span>{   
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(num != <span class="hljs-number">0</span>){
+        res = res * <span class="hljs-number">10</span> + num % <span class="hljs-number">10</span>;
+        num /= <span class="hljs-number">10</span>;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-comment">// 取十进制数各个位</span>
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">getDigit</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> num)</span></span>{  
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;
+    <span class="hljs-keyword">while</span>(num != <span class="hljs-number">0</span>){
+        vec.push_back(num % <span class="hljs-number">10</span>);
+        num /= <span class="hljs-number">10</span>;
+    }
+    reverse(vec.begin(), vec.end());
+    <span class="hljs-keyword">return</span> vec;
+}
+</div></code></pre>
+<ul>
+<li>进制转换</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stack&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">CharToInt</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ch)</span></span>{     <span class="hljs-comment">// 字符转数字</span>
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">if</span>(<span class="hljs-string">'0'</span> &lt;= ch &amp;&amp; ch &lt;= <span class="hljs-string">'9'</span>){
+        x = ch - <span class="hljs-string">'0'</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-string">'a'</span> &lt;= ch &amp;&amp; ch &lt;= <span class="hljs-string">'z'</span>){
+        x = ch - <span class="hljs-string">'a'</span> + <span class="hljs-number">10</span>;
+    }<span class="hljs-keyword">else</span>{
+        x = ch = <span class="hljs-string">'A'</span> + <span class="hljs-number">10</span>;
+    }
+    <span class="hljs-keyword">return</span> x;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-title">IntToChar</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>{      <span class="hljs-comment">// 数字转字符</span>
+    <span class="hljs-keyword">char</span> ch;
+    <span class="hljs-keyword">if</span>(x &lt; <span class="hljs-number">10</span>){
+        ch = x + <span class="hljs-string">'0'</span>;
+    }<span class="hljs-keyword">else</span>{
+        ch = x - <span class="hljs-number">10</span> + <span class="hljs-string">'A'</span>;
+    }
+    <span class="hljs-keyword">return</span> ch;
+}
+
+<span class="hljs-comment">// M进制转N进制</span>
+<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">MtoN</span><span class="hljs-params">(<span class="hljs-built_in">string</span> str, <span class="hljs-keyword">int</span> M, <span class="hljs-keyword">int</span> N)</span></span>{  
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> temp = <span class="hljs-number">0</span>; <span class="hljs-comment">// 十进制中间数</span>
+    <span class="hljs-comment">// M进制转十进制</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; str.size(); i++){
+        temp = temp * M + CharToInt(str[i]);
+    }
+    <span class="hljs-comment">// 十进制转N进制</span>
+    <span class="hljs-built_in">string</span> res = <span class="hljs-string">""</span>;
+    <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">char</span>&gt; st;
+    <span class="hljs-keyword">while</span>(temp != <span class="hljs-number">0</span>){
+        st.push(IntToChar(temp % N));
+        temp = temp / N;
+    }
+    <span class="hljs-keyword">while</span>(!st.empty()){
+        res += st.top();
+        st.pop();
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<ul>
+<li>N进制整数加法</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">CharToInt</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ch)</span></span>{     <span class="hljs-comment">// 字符转数字</span>
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">if</span>(<span class="hljs-string">'0'</span> &lt;= ch &amp;&amp; ch &lt;= <span class="hljs-string">'9'</span>){
+        x = ch - <span class="hljs-string">'0'</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-string">'a'</span> &lt;= ch &amp;&amp; ch &lt;= <span class="hljs-string">'z'</span>){
+        x = ch - <span class="hljs-string">'a'</span> + <span class="hljs-number">10</span>;
+    }<span class="hljs-keyword">else</span>{
+        x = ch = <span class="hljs-string">'A'</span> + <span class="hljs-number">10</span>;
+    }
+    <span class="hljs-keyword">return</span> x;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-title">IntToChar</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>{      <span class="hljs-comment">// 数字转字符</span>
+    <span class="hljs-keyword">char</span> ch;
+    <span class="hljs-keyword">if</span>(x &lt; <span class="hljs-number">10</span>){
+        ch = x + <span class="hljs-string">'0'</span>;
+    }<span class="hljs-keyword">else</span>{
+        ch = x - <span class="hljs-number">10</span> + <span class="hljs-string">'A'</span>;
+    }
+    <span class="hljs-keyword">return</span> ch;
+}
+
+<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">add_N</span><span class="hljs-params">(<span class="hljs-built_in">string</span> x, <span class="hljs-built_in">string</span> y, <span class="hljs-keyword">int</span> N)</span> </span>{  <span class="hljs-comment">// N进制加法</span>
+    <span class="hljs-keyword">int</span> carry = <span class="hljs-number">0</span>;
+    <span class="hljs-built_in">string</span> res = <span class="hljs-string">""</span>;
+    <span class="hljs-keyword">int</span> i = x.size() - <span class="hljs-number">1</span>, j = y.size() - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &gt;= <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">int</span> sum = CharToInt(x[i]) + CharToInt(y[j]) + carry;
+        carry = sum / N;
+        res = IntToChar(sum % N) + res;
+        i--;
+        j--;
+    }
+    <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">int</span> sum = carry + CharToInt(x[i]);
+        carry = sum / N;
+        res = IntToChar(sum % N) + res;
+        i--;
+    }
+    <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">int</span> sum = carry + CharToInt(y[j]);
+        carry = sum / N;
+        res = IntToChar(sum % N) + res;
+        j--;
+    }
+    <span class="hljs-keyword">if</span>(carry &gt; <span class="hljs-number">0</span>){
+        res = <span class="hljs-string">"1"</span> + res;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<ul>
+<li>浮点数加法</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InitProcess</span><span class="hljs-params">(<span class="hljs-built_in">string</span>&amp; S, <span class="hljs-built_in">string</span>&amp; T)</span> </span>{
+    <span class="hljs-keyword">int</span> pos01 = S.find(<span class="hljs-string">'.'</span>), pos02 = T.find(<span class="hljs-string">'.'</span>);
+    <span class="hljs-keyword">while</span>(pos01 &lt; pos02){
+        S = <span class="hljs-string">'0'</span> + S;
+        pos01++;
+    }
+    <span class="hljs-keyword">while</span>(pos02 &lt; pos01){
+        T = <span class="hljs-string">'0'</span> + T;
+        pos02++;
+    }
+    <span class="hljs-keyword">int</span> len01 = S.size(), len02 = T.size();
+    <span class="hljs-keyword">while</span>(len01 &lt; len02){
+        S = S + <span class="hljs-string">'0'</span>;
+        len01++;
+    }
+    <span class="hljs-keyword">while</span>(len02 &lt; len01){
+        T = T + <span class="hljs-string">'0'</span>;
+        len02++;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">FloatAdd</span><span class="hljs-params">(<span class="hljs-built_in">string</span> S, <span class="hljs-built_in">string</span> T)</span> </span>{
+    InitProcess(S, T);
+    <span class="hljs-keyword">int</span> carry = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> len = S.size();
+    <span class="hljs-built_in">string</span> res = <span class="hljs-string">""</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = len - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+        <span class="hljs-keyword">if</span> (S[i] == <span class="hljs-string">'.'</span>) {
+            res = <span class="hljs-string">'.'</span> + res;
+            <span class="hljs-keyword">continue</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">int</span> sum = S[i] - <span class="hljs-string">'0'</span> + T[i] - <span class="hljs-string">'0'</span> + carry;
+            carry = sum / <span class="hljs-number">10</span>;
+            res = <span class="hljs-keyword">char</span>(sum % <span class="hljs-number">10</span> + <span class="hljs-string">'0'</span>) + res;
+        }
+    }
+    <span class="hljs-keyword">if</span> (carry &gt; <span class="hljs-number">0</span>) {
+        res = <span class="hljs-string">'1'</span> + res;
+    }
+    <span class="hljs-comment">// 把字符串首部的所有0去掉</span>
+    <span class="hljs-keyword">int</span> end;
+    <span class="hljs-keyword">for</span> (end = <span class="hljs-number">0</span>; end &lt; res.size(); end++) {
+        <span class="hljs-keyword">if</span> (res[end] != <span class="hljs-string">'0'</span>) {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    res.erase(<span class="hljs-number">0</span>, end);
+    <span class="hljs-keyword">if</span> (res[<span class="hljs-number">0</span>] == <span class="hljs-string">'.'</span>) {
+        res = <span class="hljs-string">'0'</span> + res;
+    }
+    <span class="hljs-comment">// 把字符串尾部的所有0去掉</span>
+    <span class="hljs-keyword">for</span> (end = res.size() - <span class="hljs-number">1</span>; end &gt;= <span class="hljs-number">0</span>; end--) {
+        <span class="hljs-keyword">if</span> (res[end] != <span class="hljs-string">'0'</span>) {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    res.erase(end + <span class="hljs-number">1</span>, res.size() - end - <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">if</span> (res[res.size() - <span class="hljs-number">1</span>] == <span class="hljs-string">'.'</span>) {
+        res = res + <span class="hljs-string">'0'</span>;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<h3 id="62-%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E4%B8%8E%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0">6.2 最大公约数与最小公倍数</h3>
+<ul>
+<li>gcd与lcm</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> a, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> b)</span></span>{ <span class="hljs-comment">// 最大公约数</span>
+    <span class="hljs-keyword">if</span>(b == <span class="hljs-number">0</span>){
+        <span class="hljs-keyword">return</span> a;
+    }<span class="hljs-keyword">else</span>{
+        <span class="hljs-keyword">return</span> gcd(b, a % b);
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">lcm</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> a, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> b)</span></span>{ <span class="hljs-comment">// 最小公倍数</span>
+    <span class="hljs-keyword">return</span> a / gcd(a, b) * b;
+}
+</div></code></pre>
+<h3 id="63-%E8%B4%A8%E6%95%B0">6.3 质数</h3>
+<ul>
+<li>判断质数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isPrime</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> num)</span></span>{ <span class="hljs-comment">// 判断是否位质数</span>
+    <span class="hljs-keyword">if</span>(num == <span class="hljs-number">2</span>){   <span class="hljs-comment">// 2为质数</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(num &lt; <span class="hljs-number">2</span> || num % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>){  <span class="hljs-comment">// 小于2的数与偶数都不是质数</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }<span class="hljs-keyword">else</span>{  <span class="hljs-comment">// 从3开始，遍历奇数</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i * i &lt;= num; i += <span class="hljs-number">2</span>){
+            <span class="hljs-keyword">if</span>(num % i == <span class="hljs-number">0</span>){
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+}
+</div></code></pre>
+<h3 id="64-%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0">6.4 分解质因数</h3>
+<ul>
+<li>分解约数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">numOfDivisor</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> num)</span></span>{    <span class="hljs-comment">// 求约数的个数</span>
+    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> i;
+    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">1</span>; i * i &lt; num; i++){
+        <span class="hljs-keyword">if</span>(num % i == <span class="hljs-number">0</span>){
+            count += <span class="hljs-number">2</span>;
+        }
+    }
+    <span class="hljs-keyword">if</span>(i * i == num){
+        count++;
+    }
+    <span class="hljs-keyword">return</span> count;
+}
+
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt; <span class="hljs-title">getDivisor</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> num)</span></span>{    <span class="hljs-comment">// 求所有的约数</span>
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt; res;
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> i;
+    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">1</span>; i * i &lt; num; i++){
+        <span class="hljs-keyword">if</span>(num % i == <span class="hljs-number">0</span>){
+            res.push_back(i);
+            res.push_back(num / i);
+        }
+    }
+    <span class="hljs-keyword">if</span>(i * i == num){
+        res.push_back(i);
+    }
+    sort(res.begin(), res.end());
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<ul>
+<li>分解质因数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">numOfPrimeFactor</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> num)</span></span>{       <span class="hljs-comment">// 求质因数的个数</span>
+    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> i = <span class="hljs-number">2</span>; i * i &lt;= num; i++){
+        <span class="hljs-keyword">if</span>(num % i == <span class="hljs-number">0</span>){
+            <span class="hljs-keyword">while</span>(num % i == <span class="hljs-number">0</span>){
+                num /= i;
+                count++;
+            }
+        }
+    }
+    <span class="hljs-keyword">if</span>(num &gt; <span class="hljs-number">1</span>){    <span class="hljs-comment">// num为质数</span>
+        count++;
+    }
+    <span class="hljs-keyword">return</span> count;
+}
+
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>, <span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">getPrimeFactor</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> num)</span></span>{  <span class="hljs-comment">// 求所有质因数及其指数</span>
+    <span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>, <span class="hljs-keyword">int</span>&gt;&gt; res;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> i = <span class="hljs-number">2</span>; i * i &lt;= num; i++){
+        <span class="hljs-keyword">if</span>(num % i == <span class="hljs-number">0</span>){
+            <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;  <span class="hljs-comment">// 质因数的指数</span>
+            <span class="hljs-keyword">while</span>(num % i == <span class="hljs-number">0</span>){
+                num /= i;
+                index++;
+            }
+            res.emplace_back(i, index);
+        }
+    }
+    <span class="hljs-keyword">if</span>(num &gt; <span class="hljs-number">1</span>){  <span class="hljs-comment">// num为质数</span>
+        res.emplace_back(num, <span class="hljs-number">1</span>);
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<h3 id="65-%E5%BF%AB%E9%80%9F%E5%B9%82">6.5 快速幂</h3>
+<ul>
+<li>快速幂求x^y</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">quickPow</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> x, <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> y, <span class="hljs-keyword">int</span> mod)</span></span>{    <span class="hljs-comment">// 快速幂求 pow(x, y) % mod</span>
+    <span class="hljs-keyword">int</span> res = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span>(y != <span class="hljs-number">0</span>){
+        <span class="hljs-keyword">if</span>(y % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>){
+            res = res * x % mod;
+        }
+        x = x * x % mod;
+        y /= <span class="hljs-number">2</span>;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<h3 id="66-%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82">6.6 矩阵与矩阵快速幂</h3>
+<ul>
+<li>矩阵</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// 矩阵结构体</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Matrix</span>{</span>
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt;&gt; matrix;
+    <span class="hljs-keyword">int</span> row, column;
+    
+    Matrix(<span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> c) {
+        row = r;
+        column = c;
+        matrix = <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt;&gt;(r, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt;(c, <span class="hljs-number">0</span>));
+    }
+
+    Matrix&amp; <span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> Matrix&amp; A){
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> == &amp;A){
+            <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+        }
+        row = A.row;
+        column = A.column;
+        matrix = <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt;&gt;(row, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>&gt;(column, <span class="hljs-number">0</span>));
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; row; i++){
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; column; j++){
+                matrix[i][j] = A.matrix[i][j];
+            }
+        }
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+    }
+
+    <span class="hljs-keyword">friend</span> ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; out, <span class="hljs-keyword">const</span> Matrix&amp; A){
+        <span class="hljs-keyword">int</span> row = A.row, column = A.column;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; row; i++){
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; column; j++){
+                out &lt;&lt; A.matrix[i][j] &lt;&lt; <span class="hljs-string">" "</span>;
+            }
+            out &lt;&lt; <span class="hljs-built_in">endl</span>;
+        }
+        <span class="hljs-keyword">return</span> out;
+    }
+
+    <span class="hljs-keyword">friend</span> Matrix <span class="hljs-keyword">operator</span>+(<span class="hljs-keyword">const</span> Matrix&amp; A, <span class="hljs-keyword">const</span> Matrix&amp; B){
+        <span class="hljs-keyword">if</span>(A.row != B.row || A.column != B.column){
+            <span class="hljs-keyword">return</span> Matrix(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+        }
+        <span class="hljs-keyword">int</span> row = A.row, column = A.column;
+        <span class="hljs-function">Matrix <span class="hljs-title">C</span><span class="hljs-params">(row, column)</span></span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; row; i++){
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; column; j++){
+                C.matrix[i][j] = A.matrix[i][j] + B.matrix[i][j];
+            }
+        }
+        <span class="hljs-keyword">return</span> C;
+    }
+
+    <span class="hljs-keyword">friend</span> Matrix <span class="hljs-keyword">operator</span>-(<span class="hljs-keyword">const</span> Matrix&amp; A, <span class="hljs-keyword">const</span> Matrix&amp; B){
+        <span class="hljs-keyword">if</span>(A.row != B.row || A.column != B.column){
+            <span class="hljs-keyword">return</span> Matrix(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+        }
+        <span class="hljs-keyword">int</span> row = A.row, column = A.column;
+        <span class="hljs-function">Matrix <span class="hljs-title">C</span><span class="hljs-params">(row, column)</span></span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; row; i++){
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; column; j++){
+                C.matrix[i][j] = A.matrix[i][j] - B.matrix[i][j];
+            }
+        }
+        <span class="hljs-keyword">return</span> C;
+    }
+
+    <span class="hljs-keyword">friend</span> Matrix <span class="hljs-keyword">operator</span>*(<span class="hljs-keyword">const</span> Matrix&amp; A, <span class="hljs-keyword">const</span> Matrix&amp; B){
+        <span class="hljs-keyword">if</span>(A.column != B.row){
+            <span class="hljs-keyword">return</span> Matrix(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+        }
+        <span class="hljs-keyword">int</span> row = A.row, column = B.column;
+        <span class="hljs-function">Matrix <span class="hljs-title">C</span><span class="hljs-params">(row, column)</span></span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; row; i++){
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; column; j++){
+                C.matrix[i][j] = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; A.column; k++){
+                    C.matrix[i][j] += A.matrix[i][k] * B.matrix[k][j];
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> C;
+    }
+};
+
+<span class="hljs-comment">// 矩阵快速幂</span>
+<span class="hljs-function">Matrix <span class="hljs-title">matrixQuickPow</span><span class="hljs-params">(Matrix A, <span class="hljs-keyword">int</span> n)</span></span>{
+    <span class="hljs-keyword">if</span> (A.row != A.column) {
+        <span class="hljs-keyword">return</span> Matrix(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    }
+    <span class="hljs-keyword">int</span> len = A.row;
+    <span class="hljs-function">Matrix <span class="hljs-title">result</span><span class="hljs-params">(len, len)</span></span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; len; j++) {
+            <span class="hljs-keyword">if</span> (i == j) {
+                result.matrix[i][j] = <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> {
+                result.matrix[i][j] = <span class="hljs-number">0</span>;
+            }
+        }
+    }
+    <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">if</span> (n % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) {
+            result = result * A;
+        }
+        n /= <span class="hljs-number">2</span>;
+        A = A * A;
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-comment">// 矩阵快速幂取模操作</span>
+<span class="hljs-function">Matrix <span class="hljs-title">matrixMultiply_mod</span><span class="hljs-params">(<span class="hljs-keyword">const</span> Matrix&amp; A, <span class="hljs-keyword">const</span> Matrix&amp; B, <span class="hljs-keyword">int</span> mod)</span> </span>{  <span class="hljs-comment">// 取模矩阵乘法</span>
+    <span class="hljs-keyword">if</span> (A.column != B.row) {
+        <span class="hljs-keyword">return</span> Matrix(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    }
+    <span class="hljs-keyword">int</span> row = A.row, column = B.column;
+    <span class="hljs-function">Matrix <span class="hljs-title">C</span><span class="hljs-params">(row, column)</span></span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; row; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; column; j++) {
+            C.matrix[i][j] = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; A.column; k++) {
+                C.matrix[i][j] = (C.matrix[i][j] % mod + A.matrix[i][k] % mod * B.matrix[k][j] % mod) % mod;
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> C;
+}
+
+<span class="hljs-function">Matrix <span class="hljs-title">matrixQuickPow_mod</span><span class="hljs-params">(Matrix A, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> mod)</span> </span>{  <span class="hljs-comment">// 取模矩阵快速幂</span>
+    <span class="hljs-keyword">if</span> (A.row != A.column) {
+        <span class="hljs-keyword">return</span> Matrix(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    }
+    <span class="hljs-keyword">int</span> len = A.row;
+    <span class="hljs-function">Matrix <span class="hljs-title">result</span><span class="hljs-params">(len, len)</span></span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; len; j++) {
+            <span class="hljs-keyword">if</span> (i == j) {
+                result.matrix[i][j] = <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> {
+                result.matrix[i][j] = <span class="hljs-number">0</span>;
+            }
+        }
+    }
+    <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">if</span> (n % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) {
+            result = matrixMultiply_mod(result, A, mod);
+        }
+        n /= <span class="hljs-number">2</span>;
+        A = matrixMultiply_mod(A, A, mod);
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+</div></code></pre>
+<h3 id="67-%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B4%E6%95%B0">6.7 高精度整数</h3>
+<ul>
+<li>高精度整数</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// 高精度无符号整数</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BigInteger</span>{</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> MAX = <span class="hljs-number">10000</span>;
+    <span class="hljs-keyword">int</span> digit[MAX];
+    <span class="hljs-keyword">int</span> length;
+
+    <span class="hljs-comment">// 构造函数</span>
+    BigInteger(){
+        <span class="hljs-built_in">memset</span>(digit, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(digit));
+        length = <span class="hljs-number">0</span>;
+    }
+
+    BigInteger(<span class="hljs-keyword">int</span> x){
+        <span class="hljs-built_in">memset</span>(digit, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(digit));
+        length = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span>(x == <span class="hljs-number">0</span>){
+            digit[length++] = x;
+        }
+        <span class="hljs-keyword">while</span>(x != <span class="hljs-number">0</span>){
+            digit[length++] = x % <span class="hljs-number">10</span>;
+            x /= <span class="hljs-number">10</span>;
+        }
+    }
+
+    BigInteger(<span class="hljs-built_in">string</span> str){
+        <span class="hljs-built_in">memset</span>(digit, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(digit));
+        length = str.size();
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++){
+            digit[i] = str[length - i - <span class="hljs-number">1</span>] - <span class="hljs-string">'0'</span>;
+        }
+    }
+
+    BigInteger(<span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-built_in">memset</span>(digit, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(digit));
+        length = b.length;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++){
+            digit[i] = b.digit[i];
+        }
+    }
+
+    <span class="hljs-comment">// 赋值</span>
+    BigInteger&amp; <span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">int</span> x){
+        <span class="hljs-built_in">memset</span>(digit, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(digit));
+        length = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span>(x == <span class="hljs-number">0</span>){
+            digit[length++] = x;
+        }
+        <span class="hljs-keyword">while</span>(x != <span class="hljs-number">0</span>){
+            digit[length++] = x % <span class="hljs-number">10</span>;
+            x /= <span class="hljs-number">10</span>;
+        }
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+    }
+
+    BigInteger&amp; <span class="hljs-keyword">operator</span>=(<span class="hljs-built_in">string</span> str){
+        <span class="hljs-built_in">memset</span>(digit, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(digit));
+        length = str.size();
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++){
+            digit[i] = str[length - i - <span class="hljs-number">1</span>] - <span class="hljs-string">'0'</span>;
+        }
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+    }
+
+    BigInteger&amp; <span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-built_in">memset</span>(digit, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(digit));
+        length = b.length;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++){
+            digit[i] = b.digit[i];
+        }
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+    }
+
+    <span class="hljs-comment">// 输入输出</span>
+    <span class="hljs-keyword">friend</span> istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(istream&amp; in, BigInteger&amp; b){
+        <span class="hljs-built_in">string</span> str;
+        in &gt;&gt; str;
+        b = str;
+        <span class="hljs-keyword">return</span> in;
+    }
+
+    <span class="hljs-keyword">friend</span> ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; out, <span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = b.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--){
+            out &lt;&lt; b.digit[i];
+        }
+        <span class="hljs-keyword">return</span> out;
+    }
+
+    <span class="hljs-comment">// 比较</span>
+    <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>==(<span class="hljs-keyword">const</span> BigInteger&amp; a, <span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-keyword">if</span>(a.length != b.length){
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = a.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--){
+            <span class="hljs-keyword">if</span>(a.digit[i] != b.digit[i]){
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&lt;=(<span class="hljs-keyword">const</span> BigInteger&amp; a, <span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-keyword">if</span>(a.length &lt; b.length){
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a.length &gt; b.length){
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = a.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--){
+                <span class="hljs-keyword">if</span>(a.digit[i] == b.digit[i]){
+                    <span class="hljs-keyword">continue</span>;
+                }<span class="hljs-keyword">else</span>{
+                    <span class="hljs-keyword">return</span> a.digit[i] &lt; b.digit[i];
+                }
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+    }
+
+    <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&gt;=(<span class="hljs-keyword">const</span> BigInteger&amp; a, <span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-keyword">if</span>(a.length &gt; b.length){
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a.length &lt; b.length){
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = a.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--){
+                <span class="hljs-keyword">if</span>(a.digit[i] == b.digit[i]){
+                    <span class="hljs-keyword">continue</span>;
+                }<span class="hljs-keyword">else</span>{
+                    <span class="hljs-keyword">return</span> a.digit[i] &gt; b.digit[i];
+                }
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+    }
+
+    <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>!=(<span class="hljs-keyword">const</span> BigInteger&amp; a, <span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-keyword">return</span> !(a == b);
+    }
+
+    <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&gt;(<span class="hljs-keyword">const</span> BigInteger&amp; a, <span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-keyword">return</span> !(a &lt;= b);
+    }
+
+    <span class="hljs-keyword">friend</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&lt;(<span class="hljs-keyword">const</span> BigInteger&amp; a, <span class="hljs-keyword">const</span> BigInteger&amp; b){
+        <span class="hljs-keyword">return</span> !(a &gt;= b);
+    }
+
+    <span class="hljs-comment">// 运算</span>
+    <span class="hljs-keyword">friend</span> BigInteger <span class="hljs-keyword">operator</span>+(<span class="hljs-keyword">const</span> BigInteger&amp; x, <span class="hljs-keyword">const</span> BigInteger&amp; y){
+        BigInteger result;
+        <span class="hljs-keyword">int</span> carry = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; x.length || i &lt; y.length; i++){
+            <span class="hljs-keyword">int</span> current = carry + x.digit[i] + y.digit[i];
+            result.digit[result.length++] = current % <span class="hljs-number">10</span>;
+            carry = current / <span class="hljs-number">10</span>;
+        }
+        <span class="hljs-keyword">if</span>(carry != <span class="hljs-number">0</span>){
+            result.digit[result.length++] = carry;
+        }
+        <span class="hljs-keyword">return</span> result;
+    }
+
+    <span class="hljs-keyword">friend</span> BigInteger <span class="hljs-keyword">operator</span>-(<span class="hljs-keyword">const</span> BigInteger&amp; x, <span class="hljs-keyword">const</span> BigInteger&amp; y){
+        BigInteger result;
+        <span class="hljs-keyword">if</span>(x &lt; y){
+            <span class="hljs-keyword">return</span> result;
+        }
+        <span class="hljs-keyword">int</span> carry = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; x.length; i++){
+            <span class="hljs-keyword">int</span> current = x.digit[i] - y.digit[i] - carry;
+            <span class="hljs-keyword">if</span>(current &lt; <span class="hljs-number">0</span>){
+                current += <span class="hljs-number">10</span>;
+                carry = <span class="hljs-number">1</span>;
+            }<span class="hljs-keyword">else</span>{
+                carry = <span class="hljs-number">0</span>;
+            }
+            result.digit[result.length++] = current;
+        }
+        <span class="hljs-keyword">while</span>(result.digit[result.length - <span class="hljs-number">1</span>] == <span class="hljs-number">0</span> &amp;&amp; result.length &gt; <span class="hljs-number">1</span>){  <span class="hljs-comment">// x == y</span>
+            result.length--;
+        }
+        <span class="hljs-keyword">return</span> result;
+    }
+
+    <span class="hljs-keyword">friend</span> BigInteger <span class="hljs-keyword">operator</span>*(<span class="hljs-keyword">const</span> BigInteger&amp; x, <span class="hljs-keyword">const</span> BigInteger&amp; y){
+        BigInteger result;  
+        result.length = x.length + y.length;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; x.length; i++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; y.length; j++) {
+                result.digit[i + j] += x.digit[i] * y.digit[j];
+            }
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; result.length; i++) {
+            result.digit[i + <span class="hljs-number">1</span>] += result.digit[i] / <span class="hljs-number">10</span>;  <span class="hljs-comment">// 高位累加进位值</span>
+            result.digit[i] %= <span class="hljs-number">10</span>;                        <span class="hljs-comment">// 本位保留余数（0-9）</span>
+        }
+        <span class="hljs-keyword">while</span> (result.digit[result.length - <span class="hljs-number">1</span>] == <span class="hljs-number">0</span> &amp;&amp; result.length &gt; <span class="hljs-number">1</span>) {
+            result.length--;
+        }
+        <span class="hljs-keyword">return</span> result;
+    }
+
+    <span class="hljs-keyword">friend</span> BigInteger <span class="hljs-keyword">operator</span>/(<span class="hljs-keyword">const</span> BigInteger&amp; x, <span class="hljs-keyword">const</span> BigInteger&amp; y){
+        BigInteger result;
+        result.length = x.length;
+        BigInteger remainder = <span class="hljs-number">0</span>;
+        BigInteger temp = y;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = x.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) {
+            <span class="hljs-keyword">if</span> (!(remainder.length == <span class="hljs-number">1</span> &amp;&amp; remainder.digit[<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>)) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = remainder.length - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; --j) {
+                    remainder.digit[j + <span class="hljs-number">1</span>] = remainder.digit[j];
+                }
+                remainder.length++;
+            }
+            remainder.digit[<span class="hljs-number">0</span>] = x.digit[i];
+            <span class="hljs-keyword">while</span> (temp &lt;= remainder) {
+                remainder = remainder - temp;
+                result.digit[i]++;
+            }
+        }
+        <span class="hljs-keyword">while</span> (result.digit[result.length - <span class="hljs-number">1</span>] == <span class="hljs-number">0</span> &amp;&amp; result.length &gt; <span class="hljs-number">1</span>) {
+            result.length--;
+        }
+        <span class="hljs-keyword">return</span> result;
+    }
+
+    <span class="hljs-keyword">friend</span> BigInteger <span class="hljs-keyword">operator</span>%(<span class="hljs-keyword">const</span> BigInteger&amp; x, <span class="hljs-keyword">const</span> BigInteger&amp; y){
+        BigInteger remainder = <span class="hljs-number">0</span>;
+        BigInteger temp = y;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = x.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) {
+            <span class="hljs-keyword">if</span> (!(remainder.length == <span class="hljs-number">1</span> &amp;&amp; remainder.digit[<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>)) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = remainder.length - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; --j) {
+                    remainder.digit[j + <span class="hljs-number">1</span>] = remainder.digit[j];
+                }
+                remainder.length++;
+            }
+            remainder.digit[<span class="hljs-number">0</span>] = x.digit[i];
+            <span class="hljs-keyword">while</span> (temp &lt;= remainder) {
+                remainder = remainder - temp;
+            }
+        }
+        <span class="hljs-keyword">return</span> remainder;
+    }
+};
+
+<span class="hljs-comment">// 高精度无符号整数快速幂</span>
+<span class="hljs-function">BigInteger <span class="hljs-title">QuickPow</span><span class="hljs-params">(BigInteger b, <span class="hljs-keyword">int</span> n)</span></span>{
+    <span class="hljs-function">BigInteger <span class="hljs-title">res</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span>;
+    <span class="hljs-keyword">while</span>(n != <span class="hljs-number">0</span>){
+        <span class="hljs-keyword">if</span>(n % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>){
+            res = res * b;
+        }
+        b = b * b;
+        n /= <span class="hljs-number">2</span>;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<h2 id="chapter07-%E8%B4%AA%E5%BF%83">Chapter07 贪心</h2>
+<h2 id="chapter08-%E9%80%92%E5%BD%92%E4%B8%8E%E5%88%86%E6%B2%BB">Chapter08 递归与分治</h2>
+<h2 id="chapter09-%E6%90%9C%E7%B4%A2">Chapter09 搜索</h2>
+<h3 id="91-%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2">9.1 宽度优先搜索</h3>
+<ul>
+<li>通用模板</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;queue&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unordered_set&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// BFS核心框架</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bfs</span><span class="hljs-params">(初始状态)</span> </span>{
+    <span class="hljs-comment">// 1. 队列（存状态+步数）+ 判重（防循环）</span>
+    <span class="hljs-built_in">queue</span>&lt;状态类型&gt; q;
+    <span class="hljs-built_in">unordered_set</span>&lt;状态类型&gt; visited;
+
+    <span class="hljs-comment">// 2. 初始状态入队+标记</span>
+    q.push(初始状态);
+    visited.insert(初始状态);
+
+    <span class="hljs-comment">// 3. 层序遍历</span>
+    <span class="hljs-keyword">while</span> (!q.empty()) {
+        <span class="hljs-keyword">auto</span> cur = q.front(); 
+        q.pop();
+
+        <span class="hljs-comment">// 4. 终止条件：到达目标</span>
+        <span class="hljs-keyword">if</span> (cur 是目标) {
+            <span class="hljs-keyword">return</span> cur.step;
+        }
+
+        <span class="hljs-comment">// 5. 扩展新状态</span>
+        <span class="hljs-keyword">for</span> (所有可能的操作) {
+            新状态 = 对cur做操作;
+            <span class="hljs-comment">// 合法+未访问 → 入队+标记</span>
+            <span class="hljs-keyword">if</span> (新状态合法 &amp;&amp; !visited.count(新状态)) {
+                visited.insert(新状态);
+                q.push(新状态);
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>; <span class="hljs-comment">// 无解</span>
+}
+</div></code></pre>
+<ul>
+<li>迷宫最短路径问题</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;queue&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>{</span>
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">int</span> y;
+    <span class="hljs-keyword">int</span> step;
+};
+
+<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; dirs = {{<span class="hljs-number">1</span>, <span class="hljs-number">0</span>}, {<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>}, {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>}, {<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>}};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bfs_maze</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; maze, <span class="hljs-keyword">int</span> sx, <span class="hljs-keyword">int</span> sy, <span class="hljs-keyword">int</span> end_x, <span class="hljs-keyword">int</span> end_y, <span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt;&amp; path)</span></span>{
+    <span class="hljs-keyword">int</span> row_len = maze.size(), col_len = maze[<span class="hljs-number">0</span>].size();
+    <span class="hljs-built_in">queue</span>&lt;Node&gt; q;
+    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;&gt; <span class="hljs-title">visited</span><span class="hljs-params">(row_len, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;(col_len, <span class="hljs-literal">false</span>))</span></span>;
+
+    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt;&gt; <span class="hljs-title">parent</span><span class="hljs-params">(row_len, <span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt;(col_len, {<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>}))</span></span>; <span class="hljs-comment">// 保存路径上的点的前驱结点</span>
+    
+    q.push({sx, sy, <span class="hljs-number">0</span>});
+    visited[sx][sy] = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">while</span>(!q.empty()){
+        Node node = q.front();
+        q.pop();
+
+        <span class="hljs-keyword">int</span> cx = node.x, cy = node.y, step = node.step;
+        <span class="hljs-keyword">if</span>(cx == end_x &amp;&amp; cy == end_y){
+            <span class="hljs-keyword">int</span> x = cx, y = cy;
+            <span class="hljs-keyword">while</span>(x != <span class="hljs-number">-1</span> &amp;&amp; y != <span class="hljs-number">-1</span>){
+                path.push_back({x, y});
+                pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; p = parent[x][y];
+                x = p.first;
+                y = p.second;
+            }
+            reverse(path.begin(), path.end());
+            <span class="hljs-keyword">return</span> step;
+        }
+        
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp; dir : dirs){
+            <span class="hljs-keyword">int</span> nx = cx + dir[<span class="hljs-number">0</span>], ny = cy + dir[<span class="hljs-number">1</span>];
+            <span class="hljs-keyword">if</span>(nx &gt;= <span class="hljs-number">0</span> &amp;&amp; nx &lt; row_len &amp;&amp; ny &gt;= <span class="hljs-number">0</span> &amp;&amp; ny &lt; col_len &amp;&amp; !visited[nx][ny] &amp;&amp; maze[nx][ny] == <span class="hljs-number">0</span>){
+                visited[nx][ny] = <span class="hljs-literal">true</span>;
+                parent[nx][ny] = {cx, cy};
+                q.push({nx, ny, step + <span class="hljs-number">1</span>});
+            }
+            
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+}
+</div></code></pre>
+<h3 id="92-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2">9.2 深度优先搜索</h3>
+<ul>
+<li>子集问题</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// 子集问题模板</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs_subset</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; items, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; path, <span class="hljs-keyword">int</span> start, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; res)</span></span>{
+    res.push_back(path);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = start; i &lt; items.size(); i++){
+        <span class="hljs-comment">// 选择</span>
+        path.push_back(items[i]);
+        <span class="hljs-comment">// 递归</span>
+        dfs_subset(items, path, i + <span class="hljs-number">1</span>, res);
+        <span class="hljs-comment">// 回溯</span>
+        path.pop_back();
+    }
+}
+
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">subset</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; items)</span></span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; path;
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; res;
+    dfs_subset(items, path, <span class="hljs-number">0</span>, res);
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<ul>
+<li>组合问题</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// 组合问题模板</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs_combination</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; items, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; path, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> target, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; res)</span></span>{
+    <span class="hljs-comment">// items存放待选择的元素、path存放选择的元素、res保存所有满足元素之和为target的path</span>
+    <span class="hljs-keyword">if</span>(target == <span class="hljs-number">0</span>){
+        res.push_back(path);
+        <span class="hljs-keyword">return</span>;
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(target &lt; <span class="hljs-number">0</span>){
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = start; i &lt; items.size(); i++){
+        <span class="hljs-keyword">if</span>(items[i] &gt; target){
+            <span class="hljs-keyword">continue</span>;
+        }
+        <span class="hljs-comment">// 选择</span>
+        path.push_back(items[i]);
+        <span class="hljs-comment">// 递归</span>
+        dfs_combination(items, path, i + <span class="hljs-number">1</span>, target - items[i], res);
+        <span class="hljs-comment">// 回溯</span>
+        path.pop_back();
+    }
+    <span class="hljs-comment">// 组合问题为有约数条件的子集问题</span>
+}
+
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">combination</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; items, <span class="hljs-keyword">int</span> target)</span></span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; path;
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; res;
+    dfs_combination(items, path, <span class="hljs-number">0</span>, target, res);
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<ul>
+<li>全排列问题</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// 全排列问题模板</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs_permute</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; items, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; path, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;&amp; visited, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; res)</span></span>{
+    <span class="hljs-keyword">if</span>(path.size() == items.size()){
+        res.push_back(path);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items.size(); i++){
+        <span class="hljs-keyword">if</span>(visited[i]){
+            <span class="hljs-keyword">continue</span>;
+        }
+        <span class="hljs-comment">// 选择</span>
+        visited[i] = <span class="hljs-literal">true</span>;
+        path.push_back(items[i]);
+        <span class="hljs-comment">// 递归</span>
+        dfs_permute(items, path, visited, res);
+        <span class="hljs-comment">// 回溯</span>
+        path.pop_back();
+        visited[i] = <span class="hljs-literal">false</span>;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">permute</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; items)</span></span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; path;
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; res;
+    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt; <span class="hljs-title">visited</span><span class="hljs-params">(items.size(), <span class="hljs-literal">false</span>)</span></span>;
+    dfs_permute(items, path, visited, res);
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<ul>
+<li>迷宫路径问题</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// 迷宫路径问题模板</span>
+<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; dirs = {{<span class="hljs-number">1</span>, <span class="hljs-number">0</span>}, {<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>}, {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>}, {<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>}};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs_maze</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; maze, <span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt;&amp; path, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;&gt;&amp; visited, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> end_x, <span class="hljs-keyword">int</span> end_y, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt;&gt;&amp; res)</span></span>{
+    <span class="hljs-keyword">int</span> row_len = maze.size(), col_len = maze[<span class="hljs-number">0</span>].size();
+    <span class="hljs-keyword">if</span>(x &lt; <span class="hljs-number">0</span> || x &gt;= row_len || y &lt; <span class="hljs-number">0</span> || y &gt;= col_len || visited[x][y] || maze[x][y] == <span class="hljs-number">1</span>){
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-comment">// 选择</span>
+    visited[x][y] = <span class="hljs-literal">true</span>;
+    path.push_back({x, y});
+    <span class="hljs-comment">// 递归</span>
+    <span class="hljs-keyword">if</span>(x == end_x &amp;&amp; y == end_y) {
+        res.push_back(path);
+        <span class="hljs-keyword">return</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp; dir : dirs){
+            <span class="hljs-keyword">int</span> new_x = x + dir[<span class="hljs-number">0</span>], new_y = y + dir[<span class="hljs-number">1</span>];
+            dfs_maze(maze, path, visited, new_x, new_y, end_x, end_y, res);
+        }
+    }
+    <span class="hljs-comment">// 回溯</span>
+    path.pop_back();
+    visited[x][y] = <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt;&gt; <span class="hljs-title">maze_path</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; maze, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> end_x, <span class="hljs-keyword">int</span> end_y)</span></span>{
+    <span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt; path;
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt;&gt; res;
+    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;&gt; <span class="hljs-title">visited</span><span class="hljs-params">(maze.size(), <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;(maze[<span class="hljs-number">0</span>].size(), <span class="hljs-literal">false</span>))</span></span>;
+    dfs_maze(maze, path, visited, x, y, end_x, end_y, res);
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<ul>
+<li>N皇后问题</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// N皇后问题模板</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs_NQueen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N, <span class="hljs-keyword">int</span> row, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; path, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;&amp; col_used, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;&amp; diag1, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt;&amp; diag2, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; res)</span></span>{
+    <span class="hljs-comment">// row为行数，col_used为列标记数组，diag1为主对角线标记数组，diag2为副对角线标记数组</span>
+    <span class="hljs-keyword">if</span>(row == N){
+        res.push_back(path);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> col = <span class="hljs-number">0</span>; col &lt; N; col++){
+        <span class="hljs-keyword">int</span> d1 = row - col + N - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> d2 = row + col;
+        <span class="hljs-keyword">if</span>(col_used[col] || diag1[d1] || diag2[d2]){
+            <span class="hljs-keyword">continue</span>;
+        }
+        <span class="hljs-comment">// 选择</span>
+        col_used[col] = <span class="hljs-literal">true</span>;
+        diag1[d1] = <span class="hljs-literal">true</span>;
+        diag2[d2] = <span class="hljs-literal">true</span>;
+        path.push_back(col);
+        <span class="hljs-comment">// 递归</span>
+        dfs_NQueen(N, row + <span class="hljs-number">1</span>, path, col_used, diag1, diag2, res);
+        <span class="hljs-comment">// 回溯</span>
+        path.pop_back();
+        col_used[col] = <span class="hljs-literal">false</span>;
+        diag1[d1] = <span class="hljs-literal">false</span>;
+        diag2[d2] = <span class="hljs-literal">false</span>;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">NQueen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span></span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; path;
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; res;
+    <span class="hljs-comment">// 行数列数为N，主对角线数副对角线数为2 * N - 1</span>
+    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt; <span class="hljs-title">col_used</span><span class="hljs-params">(N, <span class="hljs-literal">false</span>)</span>, <span class="hljs-title">diag1</span><span class="hljs-params">(<span class="hljs-number">2</span> * N - <span class="hljs-number">1</span>, <span class="hljs-literal">false</span>)</span>, <span class="hljs-title">diag2</span><span class="hljs-params">(<span class="hljs-number">2</span> * N - <span class="hljs-number">1</span>, <span class="hljs-literal">false</span>)</span></span>; 
+    dfs_NQueen(N, <span class="hljs-number">0</span>, path, col_used, diag1, diag2, res);
+    <span class="hljs-keyword">return</span> res;
+}
+</div></code></pre>
+<h2 id="chapter10-%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">Chapter10 高级数据结构</h2>
+<h3 id="101-%E4%BA%8C%E5%8F%89%E6%A0%91">10.1 二叉树</h3>
+<h3 id="102-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91">10.2 二叉搜索树</h3>
+<h3 id="103-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97">10.3 优先队列</h3>
+<ul>
+<li>priority_queue</li>
+</ul>
+<h3 id="104-%E5%93%88%E5%B8%8C%E8%A1%A8">10.4 哈希表</h3>
+<ul>
+<li>
+<p>unordered_set</p>
+</li>
+<li>
+<p>unordered_map</p>
+</li>
+</ul>
+<h2 id="chapter11-%E5%9B%BE%E8%AE%BA">Chapter11 图论</h2>
+<h2 id="chapter12-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">Chapter12 动态规划</h2>
+
+</body>
+</html>
