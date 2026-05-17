@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+/* 7.2 区间贪心 */ 
 
 bool compare(pair<int, int> x, pair<int, int> y){
     return x.second < y.second;
@@ -35,5 +36,3 @@ int interval_delete(const vector<pair<int, int>>& vec){
     }
     return vec.size() - count;
 }
-
-
