@@ -3,9 +3,9 @@
 #include <queue>
 using namespace std;
 
-
 /* 9.1 二叉树 */
 
+// 二叉树结构体定义
 struct TreeNode {
     char val;
     struct TreeNode *left;
