@@ -6,11 +6,11 @@
 #include "test_1_2.hpp"
 using namespace std;
 
-/* 2.2 模拟 */   // 进度：12/15
+/* 2.2 模拟 */   
 
 /* 2.2.1 图形排版  */
 
-// 清华大学机试题T201 输出梯形 √
+// 清华大学机试题T201 输出梯形 
 void TsingHua_201(){
     int h;
     scanf("%d",&h);
@@ -29,13 +29,7 @@ void TsingHua_201(){
     }
 }
 
-// 北京大学机试题T130 Repeater //未完成！
-void PeKing_130(){
-    
-}
-
-
-// 浙江大学机试题T131 Hello World for U √
+// 浙江大学机试题T131 Hello World for U 
 void ZJU_131(){
     char str[80];
     while(scanf("%s", &str)!=EOF){
@@ -72,7 +66,7 @@ void ZJU_131(){
 
 /* 2.2.2 日期问题 */
 
-// 清华大学机试题T118 今年的第几天？√
+// 清华大学机试题T118 今年的第几天？
 void TsingHua_118(){
     int y, m, d;
     while(cin >> y >> m >> d){
@@ -85,7 +79,7 @@ void TsingHua_118(){
     }
 }
 
-// 华中科技大学机试题T118 打印日期 √
+// 华中科技大学机试题T118 打印日期 
 void HUS_118(){
     int y, n;
     while(cin >> y >> n){
@@ -99,7 +93,7 @@ void HUS_118(){
     }
 }
 
-// 北京理工大学机试题T117 日期累加 √
+// 北京理工大学机试题T117 日期累加 
 void BIT_117(){
     int count, y, m, d, num;
     cin >> count;
@@ -112,7 +106,7 @@ void BIT_117(){
     }
 }
 
-// 上海交通大学机试题T120 日期差值 √
+// 上海交通大学机试题T120 日期差值 
 void SJU_120(){
     string x, y;
     while (cin >> x >> y) {
@@ -123,7 +117,7 @@ void SJU_120(){
     }
 }
 
-// 上海交通大学机试题T117 Day Of Week √
+// 上海交通大学机试题T117 Day Of Week 
 void SJU_117(){
     unordered_map<string, int> map = {
         {"January", 1}, {"February", 2}, {"March", 3}, {"April", 4}, {"May", 5}, {"June", 6}, {"July", 7}, {"August", 8}, {"September", 9}, {"October", 10}, {"November", 11}, {"December", 12}
@@ -139,7 +133,7 @@ void SJU_117(){
     }
 }
 
-// 北京理工大学机试题T109 日期类 √
+// 北京理工大学机试题T109 日期类 
 void BIT_109(){
     int count, y, m, d;
     cin >> count;
@@ -155,7 +149,7 @@ void BIT_109(){
 
 /* 2.2.3 其他模拟 */
 
-// 清华大学机试题T124 剩下的树 √
+// 清华大学机试题T124 剩下的树 
 void TsingHua_124(){
     int L, M;
     while(cin >> L >> M){
@@ -177,7 +171,7 @@ void TsingHua_124(){
     }
 }
 
-// 清华大学机试题T105 手机键盘 √
+// 清华大学机试题T105 手机键盘 
 void TsingHua_105(){
     int keyboard[26] = {1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,4,1,2,3,1,2,3,4};
     char str[100];
@@ -195,7 +189,7 @@ void TsingHua_105(){
     }
 }
 
-// 浙江大学机试题T116 XXX定律 √
+// 浙江大学机试题T116 XXX定律 
 void ZJU_116(){
     int n;
     while(scanf("%d", &n) != EOF){
@@ -214,7 +208,7 @@ void ZJU_116(){
     }
 }
 
-// 浙江大学机试题T104 Grading √
+// 浙江大学机试题T104 Grading 
 double average(int x, int y){
     return double(x + y) / 2;
 }
@@ -239,15 +233,3 @@ void ZJU_104(){
         printf("%0.1lf\n", score);
     }
 }
-
-// 上海交通大学机试题T109 路径打印 // 未完成！
-void SJU_109(){
-
-}
-
-// 北京大学机试题T160 坠落的蚂蚁  // 未完成！
-void PeKing_160(){
-
-}
-
-
