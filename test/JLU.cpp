@@ -6,8 +6,7 @@
 #include <algorithm>
 using namespace std;
 
-/* 吉林大学复试上机题 */    // 进度：7/8
-
+/* 吉林大学复试上机题 */    
 
 // 吉林大学机试题T172 字符串的反码
 void JLU_172(){
@@ -28,7 +27,6 @@ void JLU_172(){
     }
 }
 
-
 // 吉林大学机试题T173 三角形的边
 void JLU_173(){
     int a, b, c;
@@ -46,7 +44,6 @@ void JLU_173(){
         cout << res << endl;
     }
 }
-
 
 // 吉林大学机试题T174 怪异的洗牌
 void shift(vector<int>& items, int shift){
@@ -97,7 +94,6 @@ void JLU_174(){
     }
 }
 
-
 // 吉林大学机试题T175 连通图
 void dfs(vector<vector<int>> matrix, vector<bool>& visited, int n, int start){
     visited[start] = true;
@@ -136,12 +132,10 @@ void JLU_175(){
     }
 }
 
-
 // 吉林大学机试题T176 排列与二进制 未完成！
 void JLU_176(){
 
 }
-
 
 // 吉林大学机试题T177 平方因子
 void JLU_177(){
@@ -164,7 +158,6 @@ void JLU_177(){
     }
 }
 
-
 // 吉林大学机试题T178 数字之和
 void JLU_178(){
     int num;
@@ -183,6 +176,3 @@ void JLU_178(){
         cout << res1 << " " << res2 << endl;
     }
 }
-
-
-
