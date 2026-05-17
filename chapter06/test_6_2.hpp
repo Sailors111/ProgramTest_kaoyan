@@ -5,6 +5,7 @@ using namespace std;
 
 /* 6.2 区间贪心 */ 
 
+// 比较区间右端点大小
 bool compare(pair<int, int> x, pair<int, int> y){
     return x.second < y.second;
 }
