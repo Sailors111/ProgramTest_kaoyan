@@ -3,6 +3,8 @@
 #include <stack>
 using namespace std;
 
+/* 5.1 进制转换 */
+
 // N进制数加法，N为1~10的整数
 string add_N(string x, string y, int N) {    
     int len1 = x.size(), len2 = y.size();
