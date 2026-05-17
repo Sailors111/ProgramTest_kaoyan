@@ -3,8 +3,7 @@
 #include <cmath>
 using namespace std;
 
-
-/* 12.5 背包问题 */
+/* 10.2 背包问题 */
 
 /* 0-1背包问题（每个物品只能选一次）*/
 
@@ -62,5 +61,3 @@ int complete_bag_min(const vector<int>& weight, const vector<int>& value, int C)
     }
     return dp[C];
 }
-
-
