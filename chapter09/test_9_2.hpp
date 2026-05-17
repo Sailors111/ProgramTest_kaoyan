@@ -3,10 +3,9 @@
 #include <queue>
 using namespace std;
 
-
 /* 9.2 二叉排序树 */
 
-// 二叉排序树
+// 二叉排序树结构体定义
 struct BST{
     int val;
     struct BST* left;   // 左子树
