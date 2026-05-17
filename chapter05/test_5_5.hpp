@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
-/* 6.5 快速幂 */
+/* 5.5 快速幂 */
 
 // 快速幂求 pow(x, y)
 long long quickPow(long long x, long long y){     // 求pow(x, y)
