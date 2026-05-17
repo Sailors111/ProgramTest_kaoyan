@@ -2,9 +2,7 @@
 #include <vector>
 using namespace std;
 
-
-/* 12.1 递推求解 */    
-
+/* 10.1 递推求解 */    
 
 // 爬楼梯问题：dp[n] = dp[n-1] + dp[n-2], dp[0] = 1, dp[1] = 2; dp[i]表示第i个台阶的方案数
 int climb_stairs(int n) {
@@ -58,5 +56,3 @@ int minSubArray(const vector<int>& nums){
     }
     return res;
 }
-
-
