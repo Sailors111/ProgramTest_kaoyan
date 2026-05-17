@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-/* 2.1 枚举 */   // 进度：6/6
+/* 2.1 枚举 */  
 
-// 清华大学机试题T144 abc √
+// 清华大学机试题T144 abc 
 void TsingHua_144(){
     for(int a = 0; a <= 9; a++){
         for(int b = 0; b <= 9; b++){
@@ -16,7 +16,7 @@ void TsingHua_144(){
     }
 }
 
-// 清华大学机试题T130 反序数 √
+// 清华大学机试题T130 反序数 
 void TsingHua_130(){
     for(int N = 1000; N <= 9999; N++){
         int reverse = 0, x = N;
@@ -31,7 +31,7 @@ void TsingHua_130(){
     }
 }
 
-// 清华大学机试题T131 对称平方数1 √
+// 清华大学机试题T131 对称平方数1 
 void TsingHua_131(){
     for(int i = 0; i <= 256; i++){
         int N = i * i;
@@ -47,7 +47,7 @@ void TsingHua_131(){
     }
 }
 
-// 北京大学机试题T122 与7无关的数 √
+// 北京大学机试题T122 与7无关的数 
 void PeKing_122(){
     int sum = 0;
     int n;
@@ -72,7 +72,7 @@ void PeKing_122(){
     printf("%d\n", sum);
 }
 
-// 哈尔滨工业大学机试题T156 百鸡问题 √
+// 哈尔滨工业大学机试题T156 百鸡问题 
 void HaGongDa_156(){
     double n;
     scanf("%lf", &n);
@@ -87,7 +87,7 @@ void HaGongDa_156(){
     }
 }
 
-// 上海交通大学机试题T104 Old Bill √
+// 上海交通大学机试题T104 Old Bill 
 void SJU_104(){
     int N, X, Y, Z;
     int max = 0, first = 0, last = 0;
