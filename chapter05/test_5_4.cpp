@@ -2,10 +2,9 @@
 #include "test_5_4.hpp"
 using namespace std;
 
+/* 5.4 分解质因数 */  
 
-/* 6.4 分解质因数 */   // 进度：3/3
-
-// 清华大学机试题T106 质因数的个数 √
+// 清华大学机试题T106 质因数的个数 
 void TsingHua_106(){
     long long num;
     while(cin >> num){
@@ -14,7 +13,7 @@ void TsingHua_106(){
     }
 }
 
-// 清华大学机试题T102 约数的个数 √
+// 清华大学机试题T102 约数的个数 
 void TsingHua_102(){
     int N;
     while(cin >> N){
@@ -40,6 +39,3 @@ void SJU_114(){
         }
     }
 }
-
-
-
