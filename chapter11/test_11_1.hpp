@@ -3,9 +3,7 @@
 #include <queue>
 using namespace std;
 
-
-/* 11.2 图的定义与遍历 */
-
+/* 11.1 图的定义与遍历 */
 
 // 图的邻接矩阵表示
 struct Graph{
