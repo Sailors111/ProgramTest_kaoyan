@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
-/* 6.2 最大公约数与最小公倍数 */
+/* 5.2 最大公约数与最小公倍数 */  
 
 /*
     最大公约数定理：
@@ -29,5 +28,3 @@ int gcd(int a, int b){
 int lcm(int a, int b){      
     return a / gcd(a, b) * b;  
 }
-
-
