@@ -3,10 +3,9 @@
 #include "test_8_2.hpp"
 using namespace std;
 
+/* 8.2 深度优先搜索 */ 
 
-/* 9.2 深度优先搜索 */  // 进度：2/2
-
-// 北京大学机试题T131 神奇的口袋（难） √
+// 北京大学机试题T131 神奇的口袋（难） 
 void combination(const vector<int>& items, int start, int target, int& res){
     if(target == 0){
         res++;
@@ -57,5 +56,3 @@ void PeKing_157(){
         cout << vec[index - 1] << endl;
     }
 }
-
-
