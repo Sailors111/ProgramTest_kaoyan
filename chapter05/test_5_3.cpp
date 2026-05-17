@@ -2,10 +2,9 @@
 #include "test_5_3.hpp"
 using namespace std;
 
+/* 5.3 质数 */  
 
-/* 6.3 质数 */   // 进度：3/3
-
-// 哈尔滨工业大学机试题T163 素数判定 √
+// 哈尔滨工业大学机试题T163 素数判定 
 void HaGongDa_163(){
     int n;
     while(cin >> n){
@@ -17,7 +16,7 @@ void HaGongDa_163(){
     }
 }
 
-// 北京航空航天大学机试题T102 素数 √
+// 北京航空航天大学机试题T102 素数 
 void BUA_102(){
     int n;
     while(cin >> n){
@@ -30,7 +29,7 @@ void BUA_102(){
     }
 }
 
-// 上海交通大学机试题T119 Prime Number √
+// 上海交通大学机试题T119 Prime Number 
 void SJU_119(){
     int k;
     while(cin >> k){
@@ -44,6 +43,3 @@ void SJU_119(){
         cout << x - 1 << endl;
     }
 }
-
-
-
