@@ -3,8 +3,7 @@
 #include <queue>
 using namespace std;
 
-
-/* 9.1 宽度优先搜索 */
+/* 8.1 宽度优先搜索 */
 
 /*
     核心逻辑：队列存状态-出队检查目标-扩展新状态-判重入队
@@ -85,4 +84,3 @@ int bfs_maze(const vector<vector<int>>& maze, int sx, int sy, int end_x, int end
     }
     return -1;
 }
-
