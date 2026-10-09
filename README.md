@@ -1,6 +1,6 @@
 # 考研复试上机考试（C/C++）
 
-**本项目所有题目来自牛客计算机考研题库**<a href="https://www.nowcoder.com/kaoyan" target="_blank">https://www.nowcoder.com/kaoyan</a>
+**本项目为本人2026年硕士研究生招生考试复试上机考试练习题的答案，所有题目来自牛客计算机考研题库**<a href="https://www.nowcoder.com/kaoyan" target="_blank">https://www.nowcoder.com/kaoyan</a>**
 
 ## Chapter01 枚举与模拟
 ### 1.1 枚举
