@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 #include <queue>
 #include <algorithm>
 using namespace std;
@@ -170,7 +171,7 @@ int countNodesAtLevel(TreeNode* root, int level){
     int res = 1;
     while(!q.empty() && level > 0){
         int size = q.size();
-        while(!q.empty()){
+        for(int i = 0; i < size; i++){
             TreeNode* node = q.front();
             if(node->left != nullptr){
                 q.push(node->left);
@@ -230,22 +231,126 @@ int width(TreeNode* root){
 
 
 // 完全二叉树判断
-bool isCompelteTree(TreeNode* root){
-    return false;
+bool isCompleteTree(TreeNode* root){
+    if(root == nullptr){
+        return true;
+    }
+    queue<TreeNode*> q;
+    q.push(root);
+    bool flag = false;
+    while(!q.empty()){
+        TreeNode* node = q.front();
+        if(node != nullptr && flag){
+            return false;
+        }
+        if(node == nullptr){
+            flag = true;
+            q.pop();
+            continue;
+        }
+        q.push(node->left);
+        q.push(node->right);
+        q.pop();
+    }
+    return true;
 }
 
 // 满二叉树判断
 bool isFullTree(TreeNode* root){
-    return false;
+    if(root == nullptr){
+        return true;
+    }
+    queue<TreeNode*> q;
+    q.push(root);
+    int nodeNum = 1;
+    while(!q.empty()){
+        int size = q.size();
+        if(size != nodeNum){
+            return false;
+        }
+        for(int i = 0; i < size; i++){
+            TreeNode* node = q.front();
+            if(node->left != nullptr){
+                q.push(node->left);
+            }
+            if(node->right != nullptr){
+                q.push(node->right);
+            }
+            q.pop();
+        }
+        nodeNum = 2 * nodeNum;
+    }
+    return true;
 }
 
-// 二叉搜素树判断
+// 二叉搜索树判断
+bool isBSTNode(TreeNode* root, int& pre_val){
+    if(root == nullptr){
+        return true;
+    }
+    bool l = isBSTNode(root->left, pre_val);
+    if(l == false){
+        return false;
+    }
+    if(root->val <= pre_val){
+        return false;
+    }
+    pre_val = root->val;
+    bool r = isBSTNode(root->right, pre_val);
+    if(r == false){
+        return false;
+    }
+    return true;
+}
+
 bool isValidBST(TreeNode* root){
-    return false;
+    if(root == nullptr){
+        return true;
+    }
+    int pre_val = INT32_MIN;
+    return isBSTNode(root, pre_val);
 }
 
 // 平衡二叉树判断
-bool isBalanced(TreeNode* root){
-    return false;
+int isBalanced(TreeNode* root){
+    if(root == nullptr){
+        return 0;
+    }
+    int lh = isBalanced(root->left);
+    if(lh == -1){
+        return -1;
+    }
+    int rh = isBalanced(root->right);
+    if(rh == -1){
+        return -1;
+    }
+    if(abs(lh - rh) > 1){
+        return -1;
+    }
+    return max(lh, rh) + 1;
+}
+
+bool isBalancedTree(TreeNode* root){
+    return isBalanced(root) != -1;
+}
+
+
+// 二叉树的路径长度：根到每个节点的路径长度（边数）之和
+int pathLength(TreeNode* root, int depth = 0){
+    if(root == nullptr){
+        return 0;
+    }
+    return depth + pathLength(root->left, depth + 1) + pathLength(root->right, depth + 1);
+}
+
+// 二叉树的带权路径长度：WPL，所有叶子节点的[权值×路径长度]之和
+int weightedPathLength(TreeNode* root, int depth = 0){
+    if(root == nullptr){
+        return 0;
+    }
+    if(root->left == nullptr && root->right == nullptr){
+        return depth * root->val;
+    }
+    return weightedPathLength(root->left, depth + 1) + weightedPathLength(root->right, depth + 1);
 }
 

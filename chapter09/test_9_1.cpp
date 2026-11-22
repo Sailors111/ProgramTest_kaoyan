@@ -6,6 +6,19 @@ using namespace std;
 /* 9.1 二叉树 */   
 
 // 清华大学机试题T110 二叉树遍历 
+void visit1(TreeNode* root) {
+    cout << char(root->val) << " ";
+}
+
+void inorder_(TreeNode* root){
+    if (root == nullptr) {
+        return;
+    }
+    inorder_(root->left);
+    visit1(root);
+    inorder_(root->right);
+}
+
 void preorder_insert(TreeNode*& root, string str, int& i){
     if(i == str.size()){
         return;
@@ -27,15 +40,15 @@ void TsingHua_110(){
         TreeNode* root = new TreeNode();
         int pos = 0;
         preorder_insert(root, str, pos);
-        inorder(root);
+        inorder_(root);
         cout << endl;
     }
 }
 
 
 // 华中科技大学机试题T108 二叉树遍历（难）
-void visit_(TreeNode* root) {
-    cout << root->val;
+void visit2(TreeNode* root) {
+    cout << char(root->val);
 }
 
 void postorder_(TreeNode* root) {
@@ -44,7 +57,7 @@ void postorder_(TreeNode* root) {
     }
     postorder_(root->left);
     postorder_(root->right);
-    visit_(root);
+    visit2(root);
 }
 
 void HUS_108(){ 
