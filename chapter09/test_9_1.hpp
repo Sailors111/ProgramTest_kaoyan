@@ -2,14 +2,14 @@
 #include <iostream>
 #include <string>
 #include <queue>
-#include <cmath>
+#include <algorithm>
 using namespace std;
 
 /* 9.1 二叉树 */
 
 // 二叉树结构体定义
 struct TreeNode {
-    char val;
+    int val;
     struct TreeNode *left;
     struct TreeNode *right;
     TreeNode() : val(0), left(nullptr), right(nullptr) {}
@@ -143,7 +143,7 @@ int countOneDegreeNodes(TreeNode* root) {
     if(root == nullptr){
         return 0;
     }else if((root->left == nullptr && root->right != nullptr) || (root->left != nullptr && root->right == nullptr)){
-        return 1;
+        return 1 + countOneDegreeNodes(root->left) + countOneDegreeNodes(root->right);
     }else{
         return countOneDegreeNodes(root->left) + countOneDegreeNodes(root->right);
     }
@@ -154,7 +154,7 @@ int countTwoDegreeNodes(TreeNode* root) {
     if(root == nullptr){
         return 0;
     }else if(root->left != nullptr && root->right != nullptr){
-        return 1;
+        return 1 + countTwoDegreeNodes(root->left) + countTwoDegreeNodes(root->right);
     }else{
         return countTwoDegreeNodes(root->left) + countTwoDegreeNodes(root->right);
     }
@@ -165,10 +165,10 @@ int countTwoDegreeNodes(TreeNode* root) {
 int height(TreeNode* root){
     if(root == nullptr){
         return 0;
-    }else if(root->left == nullptr && root->right){
+    }else if(root->left == nullptr && root->right == nullptr){
         return 1;
     }else{
-        return max(height(root->left), height(root->right));
+        return max(height(root->left), height(root->right)) + 1;
     }
 }
 
