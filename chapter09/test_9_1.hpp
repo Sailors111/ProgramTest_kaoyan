@@ -160,6 +160,35 @@ int countTwoDegreeNodes(TreeNode* root) {
     }
 }
 
+// 计算某一层的节点数量（根节点在第一层）
+int countNodesAtLevel(TreeNode* root, int level){
+    if(root == nullptr || level < 1){
+        return 0;
+    }
+    queue<TreeNode*> q;
+    q.push(root);
+    int res = 1;
+    while(!q.empty() && level > 0){
+        int size = q.size();
+        while(!q.empty()){
+            TreeNode* node = q.front();
+            if(node->left != nullptr){
+                q.push(node->left);
+            }
+            if(node->right != nullptr){
+                q.push(node->right);
+            }
+            q.pop();
+        }
+        level--;
+        res = size;
+    }
+    if(level > 0){
+        return 0;
+    }
+    return res;
+}
+
 
 // 计算二叉树的高度
 int height(TreeNode* root){
@@ -200,4 +229,23 @@ int width(TreeNode* root){
 }
 
 
+// 完全二叉树判断
+bool isCompelteTree(TreeNode* root){
+    return false;
+}
+
+// 满二叉树判断
+bool isFullTree(TreeNode* root){
+    return false;
+}
+
+// 二叉搜素树判断
+bool isValidBST(TreeNode* root){
+    return false;
+}
+
+// 平衡二叉树判断
+bool isBalanced(TreeNode* root){
+    return false;
+}
 

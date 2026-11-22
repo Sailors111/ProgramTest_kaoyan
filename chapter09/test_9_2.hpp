@@ -68,6 +68,9 @@ void postorder(BST* root){
 
 // 层序遍历
 void levelorder(BST* root){
+    if(root == nullptr){
+        return;
+    }
     queue<BST*> q;
     q.push(root);
     while(!q.empty()){
