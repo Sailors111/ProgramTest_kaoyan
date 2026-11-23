@@ -7,7 +7,7 @@ using namespace std;
 
 /* 11.2 并查集 */
 
-const int MAX_SIZE = 100;
+const int MAX_SIZE = 10000;
 
 // 并查集定义
 struct UFSet{

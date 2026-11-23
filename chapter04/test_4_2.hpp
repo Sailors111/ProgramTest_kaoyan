@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <cctype>
 using namespace std;
 
 /* 4.2 栈与队列 */ 

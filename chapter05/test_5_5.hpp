@@ -19,7 +19,8 @@ long long quickPow(long long x, long long y){     // 求pow(x, y)
 
 // 快速幂求 pow(x, y) % mod
 int quickPow_mod(long long x, long long y, int mod){    // 求pow(x, y) % mod
-    int res = 1;
+    int res = 1 % mod;
+    x = x % mod;
     while(y != 0){      
         if(y % 2 == 1){     // y为奇数
             res = res * x % mod;

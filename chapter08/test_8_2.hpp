@@ -145,7 +145,6 @@ void dfs_maze(const vector<vector<int>>& maze, vector<pair<int, int>>& path, vec
     // 递归
     if(x == end_x && y == end_y) {
         res.push_back(path);
-        return;
     } else {
         for(auto & dir : dirs){
             int new_x = x + dir[0], new_y = y + dir[1];

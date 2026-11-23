@@ -23,7 +23,7 @@ void InitPrime(vector<int>& prime, bool*& isPrime, int MAX){   // 筛选质数
             continue;
         }
         prime.push_back(i);
-        for(int j = i * i; j < MAX; j += i){  // 内层循环：筛除当前质数的所有倍数（非质数）
+        for(long long j = (long long)i * i; j < MAX; j += i){  // 内层循环：筛除当前质数的所有倍数（非质数）
             isPrime[j] = false;
         }
     }

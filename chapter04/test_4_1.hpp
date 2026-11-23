@@ -27,7 +27,7 @@ vector<vector<int>> twoSum(vector<int> items, int target) {
     vector<vector<int>> res;
     sort(items.begin(), items.end());
     int left = 0, right = items.size() - 1;
-    while (left <= right) {
+    while (left < right) {
         if (items[left] + items[right] == target) {
             res.push_back({items[left], items[right]});
             left++;

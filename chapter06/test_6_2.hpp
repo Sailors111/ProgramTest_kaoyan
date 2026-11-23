@@ -13,6 +13,9 @@ bool compare(pair<int, int> x, pair<int, int> y){
 
 // 不重叠区间选择（端点不算重叠）
 int interval_select(vector<pair<int, int>> vec){
+    if(vec.empty()){
+        return 0;
+    }
     sort(vec.begin(), vec.end(), compare);
     int count = 1;
     int last = vec[0].second;  // 选最早结束的
@@ -27,6 +30,9 @@ int interval_select(vector<pair<int, int>> vec){
 
 // 删除区间（端点算重叠）
 int interval_delete(vector<pair<int, int>> vec){
+    if(vec.empty()){
+        return 0;
+    }
     sort(vec.begin(), vec.end(), compare);
     int count = 1;
     int last = vec[0].second;

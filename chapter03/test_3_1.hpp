@@ -25,7 +25,9 @@ vector<string> split(string str, char ch) { // 将str按ch为界分割
     int start = 0, len = str.size();
     for (int end = 0; end < len; end++) {
         if (str[end] == ch) {
-            vec.push_back(str.substr(start, end - start));
+            if(end > start){
+                vec.push_back(str.substr(start, end - start));
+            }
             while (end < len && str[end] == ch) {
                 end++;
             }
@@ -41,6 +43,12 @@ vector<string> split(string str, char ch) { // 将str按ch为界分割
 
 // 浮点数加法
 void InitProcess(string& S, string& T) {
+    if(S.find('.') == string::npos) {
+        S += ".0";
+    }
+    if(T.find('.') == string::npos) {
+        T += ".0";
+    }
     int pos01 = S.find('.'), pos02 = T.find('.');
     while (pos01 < pos02) {
         S = '0' + S;

@@ -36,6 +36,9 @@ struct BigInteger{
         for(int i = 0; i < length; i++){
             digit[i] = str[length - i - 1] - '0';
         }
+        while(length > 1 && digit[length - 1] == 0) {
+            length--;
+        }
     }
 
     BigInteger(const BigInteger& b){
@@ -65,6 +68,9 @@ struct BigInteger{
         length = str.size();
         for(int i = 0; i < length; i++){
             digit[i] = str[length - i - 1] - '0';
+        }
+        while(length > 1 && digit[length - 1] == 0) {
+            length--;
         }
         return *this;
     }

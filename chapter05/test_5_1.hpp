@@ -86,6 +86,9 @@ string TenToN(string num, int N) {
         res = mod(num, N) + res;
         num = divide(num, N);
     }
+    if(res.empty()) {
+        res = "0";
+    }
     return res;
 }
 

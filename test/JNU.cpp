@@ -353,7 +353,7 @@ bool _compare(pair<long long, long long> x, pair<long long, long long> y){
     return x.second < y.second;
 }
 
-int JNU_13(){
+void JNU_13(){
     int n, a, b;
     while(cin >> n){
         vector<pair<long long, long long>> items;

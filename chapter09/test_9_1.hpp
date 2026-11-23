@@ -4,6 +4,8 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
+#include <cstdlib>
+#include <cstdint>
 using namespace std;
 
 /* 9.1 二叉树 */
